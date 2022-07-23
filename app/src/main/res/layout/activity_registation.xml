@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/ic_bg_topheader">
+
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/financelogo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/mo_re"
+                    android:text="Welcome To Back"
+                    android:textColor="@color/textcardColor"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/etRegisterName"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_border_rounded_corner"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="15dp"
+                android:fontFamily="serif"
+                android:hint="Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <EditText
+                android:id="@+id/etRegisterEmail"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_border_rounded_corner"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="15dp"
+                android:fontFamily="serif"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <EditText
+                android:id="@+id/etRegisterMobile"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_border_rounded_corner"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="15dp"
+                android:fontFamily="serif"
+                android:hint="Mobile"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <RadioGroup
+                android:id="@+id/rgRegisterGender"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/white_border_rounded_corner"
+                android:orientation="horizontal"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/mrbRegisterMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Male" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/mrbRegisterFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Female" />
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/etRegisterPassword"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_border_rounded_corner"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="15dp"
+                android:fontFamily="serif"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbRegister"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#449DEC"
+                android:text="Register"
+                app:cornerRadius="4dp" />
+
+            <TextView
+                android:id="@+id/tvAlreadyAccRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Already have an account?" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</RelativeLayout>
