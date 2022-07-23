@@ -3,17 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/background_gradient_color.xml" value="0.1095" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/bg_edit_text.xml" value="0.1095" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/change_button_color.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/gradient_foreground.xml" value="0.1495" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/gradientbackground.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/ic_attendance_recap.xml" value="0.1495" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/ic_baseline_account_circle_24.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/ic_bg_topheader.xml" value="0.1495" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/ic_outline_camera_alt_24.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/ic_outline_mail_24.xml" value="0.1495" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/text_white_bg.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/white_border_rounded_corner.xml" value="0.1495" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/header_gradient_color.xml" value="0.1495" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_dash_board.xml" value="0.2" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/ic_flash_blu.xml" value="0.2045" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_dash_board.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_home.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_registation.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_registation.xml" value="0.264" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/header_drawer_layout.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.23802083333333332" />
       </map>
     </option>
   </component>

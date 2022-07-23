@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_light">#449DEC</color>
     <color name="cardColor">#ffffff</color>
+    <color name="appColor">#0ea2bd</color>
     <color name="textcardColor">#3f3f3f</color>
+
+
 </resources>

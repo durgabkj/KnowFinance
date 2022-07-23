@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_DashBoard"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="DashBoard"
+            app:itemTextColor="@color/black"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/nav_BackTest"
+            android:icon="@drawable/ic_flash_blu"
+            android:title="Back Test"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Stock"
+            android:icon="@drawable/ic_baseline_work_24"
+            android:title="Add Stock"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Chart"
+            android:icon="@drawable/ic_baseline_show_chart_24"
+            android:title="Chart"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Profile"
+            android:icon="@drawable/ic_baseline_person_add_alt_1_24"
+            android:title="Profile"
+            app:itemTextColor="@color/black" />
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="Communication"
+
+            app:itemTextColor="@color/black">
+
+            <menu>
+
+                <item
+                    android:id="@+id/mnuSetting"
+                    android:icon="@drawable/ic_baseline_settings_24"
+                    android:title="Setting"
+                    app:itemTextColor="@color/black" />
+
+
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_baseline_list_alt_24"
+                    android:title="About us"
+                    app:itemTextColor="@color/black" />
+
+                <item
+                    android:id="@+id/nav_rating"
+                    android:icon="@drawable/ic_baseline_star_24"
+                    android:title="Rating"
+                    app:itemTextColor="@color/black" />
+
+
+
+                <item
+                    android:id="@+id/mnuShare"
+
+                    android:icon="@drawable/ic_baseline_share_24"
+                    android:title="Share"
+                    app:itemTextColor="@color/black" />
+
+
+
+                <item
+                    android:id="@+id/mnuLogout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="LogOut"
+                    app:itemTextColor="@color/black" />
+
+
+            </menu>
+        </item>
+    </group>
+
+
+</menu>

@@ -29,9 +29,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="140dp"
-                android:fontFamily="serif"
+                android:fontFamily="@font/mo_re"
                 android:text="Welcome To Know Finance"
-                android:textColor="#aeaeae"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
         </FrameLayout>
 
@@ -71,7 +71,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/blue_light"
+            android:backgroundTint="@color/appColor"
             android:text="Login"
             app:cornerRadius="4dp" />
 
@@ -87,7 +87,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/blue_light"
+            android:backgroundTint="@color/appColor"
             android:text="Register"
             app:cornerRadius="4dp" />
 
