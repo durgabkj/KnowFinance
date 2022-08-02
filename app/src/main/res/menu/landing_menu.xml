@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home"
+            app:itemTextColor="@color/black"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/nav_About"
+            android:icon="@drawable/ic_baseline_list_alt_24"
+            android:title="About"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Service"
+            android:icon="@drawable/ic_baseline_work_24"
+            android:title="Service"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Portfolio"
+            android:icon="@drawable/ic_baseline_list_alt_24"
+            android:title="Portfolio"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Team"
+            android:icon="@drawable/ic_baseline_people_24"
+            android:title="Team"
+            app:itemTextColor="@color/black" />
+
+        <item
+            android:id="@+id/nav_Contact"
+            android:icon="@drawable/ic_baseline_import_contacts_24"
+            android:title="Contact"
+            app:itemTextColor="@color/black" />
+    </group>
+</menu>

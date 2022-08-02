@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LandingActivity">
+
+
+    <ImageView
+        android:id="@+id/ivLanding"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha=".4"
+        android:src="@drawable/landingimage"
+        android:layout_height="match_parent"/>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/dlLanding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ablLanding"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/appColor"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mtbLandingFinance"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white"
+                app:title="Know-Finance"
+                android:layout_marginStart="5dp"
+                tools:ignore="MissingConstraints"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to"
+                android:fontFamily="@font/mo_re"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:textColor="#B5000000"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Know Finance"
+                android:fontFamily="@font/mo_re"
+                android:textStyle="bold"
+                android:textColor="@color/appColor"
+                android:layout_marginStart="5dp"
+                android:textSize="25dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in investing what is comfortable is rarely profitable"
+            android:fontFamily="@font/mo_re"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textSize="12sp"
+            android:layout_gravity="center"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Start"
+        android:backgroundTint="@color/appColor"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Start"
+        android:drawableStart="@drawable/playbutton"
+        android:layout_marginStart="8dp"
+        android:drawablePadding="8dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:fontFamily="@font/mo_re"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_light"/>
+
+
+</LinearLayout>
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:layout_margin="8dp"
+            >
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="Login"
+                android:backgroundTint="@color/appColor"/>
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nvHeaderLanding"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            app:headerLayout="@layout/header_drawer_layout"
+            app:itemHorizontalPadding="30dp"
+            app:menu="@menu/landing_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+
+</FrameLayout>
