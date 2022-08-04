@@ -28,11 +28,13 @@
             android:title="Chart"
             app:itemTextColor="@color/black" />
 
+
         <item
             android:id="@+id/nav_Profile"
             android:icon="@drawable/ic_baseline_person_add_alt_1_24"
             android:title="Profile"
             app:itemTextColor="@color/black" />
+
     </group>
 
     <group android:checkableBehavior="single">
@@ -45,7 +47,7 @@
             <menu>
 
                 <item
-                    android:id="@+id/mnuSetting"
+                    android:id="@+id/nav_Setting"
                     android:icon="@drawable/ic_baseline_settings_24"
                     android:title="Setting"
                     app:itemTextColor="@color/black" />

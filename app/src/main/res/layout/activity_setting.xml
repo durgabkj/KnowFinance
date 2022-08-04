@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ablLanding"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/appColor"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mtbSettingFinance"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white"
+                app:title="Settings"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                android:layout_marginStart="5dp"
+                tools:ignore="MissingConstraints"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="30dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 St module"
+                android:textStyle="bold"
+                android:textColor="@color/textcardColor"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/mo_re"/>
+
+
+
+            <RadioGroup
+                android:checkedButton="@+id/rbEnableModule"
+                android:id="@+id/rgModule"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/blue_outline"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbEnableModule"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:background="@drawable/toggle_widget_background"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:button="@null"
+                    android:fontFamily="@font/mo_re"
+                    android:gravity="center"
+                    android:text="Enable"
+                    android:textColor="@color/textcardColor" />
+
+                <RadioButton
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/rbFirstModule"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/toggle_widget_background"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Disable"
+                    android:textColor="@color/textcardColor"
+                    android:fontFamily="@font/mo_re"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heikin Ashi"
+                android:textStyle="bold"
+                android:textColor="@color/textcardColor"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/mo_re"/>
+
+
+
+            <RadioGroup
+                android:checkedButton="@+id/rbEnableModule2"
+                android:id="@+id/rgModule2"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/blue_outline"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbEnableModule2"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:background="@drawable/toggle_widget_background"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Enable"
+                    android:textStyle="bold"
+                    android:textColor="@color/textcardColor"
+                    android:fontFamily="@font/mo_re"/>
+
+                <RadioButton
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/toggle_widget_background"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/offer"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Disable"
+                    android:textStyle="bold"
+                    android:textColor="@color/textcardColor"
+                    android:fontFamily="@font/mo_re"
+                    tools:ignore="DuplicateIds" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/black"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZERODHA-KITE Credientials"
+            android:textColor="@color/black"
+            android:fontFamily="@font/mo_re"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/mo_re"
+                android:textColor="@color/textcardColor"
+                android:layout_gravity="center"
+                android:text="Api Key" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:id="@+id/etApiKey"
+                android:fontFamily="@font/mo_re"
+                style="@style/PersonalDataTextView"
+                android:hint="Api Key"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/mo_re"
+                android:textColor="@color/textcardColor"
+                android:layout_gravity="center"
+                android:text="Api Secret" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:id="@+id/etSecretKey"
+                style="@style/PersonalDataTextView"
+                android:hint="Api Secret"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_gravity="center"
+                android:fontFamily="@font/mo_re"
+                android:textColor="@color/textcardColor"
+                android:text="User ID" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:id="@+id/etUserId"
+                style="@style/PersonalDataTextView"
+                android:hint="EUser ID"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/mo_re"
+                android:textColor="@color/textcardColor"
+                android:layout_gravity="center"
+                android:text="User Password" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/mo_re"
+                android:id="@+id/etAddUserPassword"
+                style="@style/PersonalDataTextView"
+                android:hint="Password"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="@color/textcardColor"
+                android:fontFamily="@font/mo_re"
+                android:layout_gravity="center"
+                android:text="TOTP Key" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/mo_re"
+                android:id="@+id/etAddUserOTPKey"
+                style="@style/PersonalDataTextView"
+                android:hint="TOTP Key"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

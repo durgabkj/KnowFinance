@@ -10,4 +10,17 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="PersonalDataTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="fontFamily">@font/mo_re</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableTint">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/bg_edit_text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+    </style>
 </resources>

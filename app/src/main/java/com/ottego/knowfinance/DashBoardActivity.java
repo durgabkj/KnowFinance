@@ -53,6 +53,14 @@ Context context;
                     return true;
                 }
 
+
+                if (id == R.id.nav_Setting) {
+                    Intent intent = new Intent(context, SettingActivity.class);
+                    startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
                 return false;
             }
         });
