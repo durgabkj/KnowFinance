@@ -13,6 +13,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="ExtraText">
         <activity
+            android:name=".TradingStatusActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddStockInfoActivity"
             android:exported="false" />
         <activity

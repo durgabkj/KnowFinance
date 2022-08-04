@@ -3,6 +3,7 @@ package com.ottego.knowfinance;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.ottego.knowfinance.databinding.ActivityAddStockInfoBinding;
 
@@ -13,5 +14,16 @@ ActivityAddStockInfoBinding binding;
         super.onCreate(savedInstanceState);
         binding=ActivityAddStockInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        listener();
+    }
+
+
+    private void listener() {
+        binding.mtbAddStockFinance.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }

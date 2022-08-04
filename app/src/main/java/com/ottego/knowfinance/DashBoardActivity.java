@@ -61,6 +61,20 @@ Context context;
                     return true;
                 }
 
+                if (id == R.id.nav_Stock) {
+                    Intent intent = new Intent(context, AddStockInfoActivity.class);
+                    startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
+                if (id == R.id.nav_Chart) {
+                    Intent intent = new Intent(context, TradingStatusActivity.class);
+                    startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
                 return false;
             }
         });
