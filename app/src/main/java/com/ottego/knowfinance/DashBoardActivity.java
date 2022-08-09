@@ -47,7 +47,7 @@ Context context;
                 }
 
                 if (id == R.id.nav_BackTest) {
-                    Intent intent = new Intent(context, LandingActivity.class);
+                    Intent intent = new Intent(context, BackTestingActivity.class);
                     startActivity(intent);
                     b.dlMainActivity.closeDrawer(GravityCompat.START);
                     return true;
@@ -69,6 +69,13 @@ Context context;
                 }
 
                 if (id == R.id.nav_Chart) {
+                    Intent intent = new Intent(context, LandingActivity.class);
+                    startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
+                if (id == R.id.nav_graph) {
                     Intent intent = new Intent(context, TradingStatusActivity.class);
                     startActivity(intent);
                     b.dlMainActivity.closeDrawer(GravityCompat.START);
