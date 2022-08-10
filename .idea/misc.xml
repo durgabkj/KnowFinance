@@ -6,6 +6,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/background_gradient_color.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/bg_edit_text.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/change_button_color.xml" value="0.1095" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/circularbordersolid.xml" value="0.169" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/gradient_foreground.xml" value="0.1495" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/gradientbackground.xml" value="0.1095" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable-v24/ic_attendance_recap.xml" value="0.1495" />
@@ -19,6 +20,8 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/blue_border.xml" value="0.156" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/blue_outline.xml" value="0.156" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/header_gradient_color.xml" value="0.1495" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.2175" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.169" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/ic_flash_blu.xml" value="0.2045" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/toggle_widget_background.xml" value="0.136" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.264" />
@@ -30,8 +33,9 @@
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_registation.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_setting.xml" value="0.23802083333333332" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_trading_status.xml" value="0.22395833333333334" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_trading_status.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/header_drawer_layout.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_add_stock.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_image_slider.xml" value="0.23697916666666666" />
         <entry key="..\:/KnowFinance/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/menu/landing_menu.xml" value="0.23802083333333332" />
@@ -47,7 +51,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

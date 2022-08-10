@@ -13,6 +13,7 @@
     <color name="appColor">#0ea2bd</color>
     <color name="light_gray">#eeeeee</color>
     <color name="textcardColor">#3f3f3f</color>
+    <color name="lightgrey">#EEEEEE</color>
 
 
 </resources>

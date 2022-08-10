@@ -25,6 +25,10 @@ ActivityBackTestingBinding b;
         super.onCreate(savedInstanceState);
         b=ActivityBackTestingBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
+
+        b.rvOverView.setVisibility(View.VISIBLE);
+        b.rvPerformance.setVisibility(View.GONE);
+        b.rvTrade.setVisibility(View.GONE);
         listener();
         imageSlider();
     }
@@ -70,6 +74,50 @@ ActivityBackTestingBinding b;
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+
+
+        b.personalinfobtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                b.rvOverView.setVisibility(View.VISIBLE);
+                b.rvPerformance.setVisibility(View.GONE);
+                b.rvTrade.setVisibility(View.GONE);
+                b.personalinfobtn.setTextColor(getResources().getColor(R.color.appColor));
+                b.experiencebtn.setTextColor(getResources().getColor(R.color.light_gray));
+                b.reviewbtn.setTextColor(getResources().getColor(R.color.light_gray));
+
+            }
+        });
+
+        b.experiencebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                b.rvOverView.setVisibility(View.GONE);
+                b.rvPerformance.setVisibility(View.VISIBLE);
+                b.rvTrade.setVisibility(View.GONE);
+                b.personalinfobtn.setTextColor(getResources().getColor(R.color.light_gray));
+                b.experiencebtn.setTextColor(getResources().getColor(R.color.appColor));
+                b.reviewbtn.setTextColor(getResources().getColor(R.color.light_gray));
+
+            }
+        });
+
+        b.reviewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                b.rvOverView.setVisibility(View.GONE);
+                b.rvPerformance.setVisibility(View.GONE);
+                b.rvTrade.setVisibility(View.VISIBLE);
+                b.personalinfobtn.setTextColor(getResources().getColor(R.color.light_gray));
+                b.experiencebtn.setTextColor(getResources().getColor(R.color.light_gray));
+                b.reviewbtn.setTextColor(getResources().getColor(R.color.appColor));
+
             }
         });
     }

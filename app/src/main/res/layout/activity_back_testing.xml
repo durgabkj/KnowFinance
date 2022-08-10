@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/light_gray"
     android:layout_height="match_parent"
     tools:context=".BackTestingActivity">
 
@@ -53,16 +54,17 @@
             app:sliderIndicatorUnselectedColor="#FFF"
             app:sliderScrollTimeInSec="1" />
 
-
-
         <LinearLayout
+            android:id="@+id/llBackTest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/tv_land_message"
+                android:id="@+id/tvModule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mo_re"
@@ -228,6 +230,92 @@
                 android:fontFamily="@font/mo_re"
                 android:textStyle="bold"/>
         </LinearLayout>
+
+        <!--Option Bar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+            android:background="@drawable/circularbordersolid"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/personalinfobtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/mo_re"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="OverView"
+                android:textAllCaps="true"
+                android:textColor="@color/appColor"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                android:id="@+id/experiencebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/mo_re"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="Performence Summary"
+                android:textAllCaps="true"
+                android:textColor="@color/lightgrey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/lightgrey" />
+
+            <TextView
+                android:id="@+id/reviewbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/mo_re"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="List of Trade"
+                android:textAllCaps="true"
+                android:textColor="@color/lightgrey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOverView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPerformance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+        
+        
+        
     </LinearLayout>
 
 
