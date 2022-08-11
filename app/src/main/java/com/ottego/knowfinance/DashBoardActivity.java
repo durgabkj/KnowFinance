@@ -81,6 +81,13 @@ Context context;
                     return true;
                 }
 
+                if (id == R.id.nav_Profile) {
+                    Intent intent = new Intent(context, MyProfileActivity.class);
+                    startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
                 return false;
             }
         });
