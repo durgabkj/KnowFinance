@@ -24,7 +24,6 @@ Context context;
         b=ActivityDashBoardBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
         context=DashBoardActivity.this;
-
         setSupportActionBar(b.mtbDashBoardFinance);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, b.dlMainActivity, b.mtbDashBoardFinance, R.string.navigation_open, R.string.navigation_close);
         b.dlMainActivity.addDrawerListener(actionBarDrawerToggle);
@@ -86,5 +85,4 @@ Context context;
             }
         });
     }
-
 }

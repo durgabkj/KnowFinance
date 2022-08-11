@@ -19,6 +19,10 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/bg_edit_text.xml" value="0.156" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/blue_border.xml" value="0.156" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/blue_outline.xml" value="0.156" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_blue_fil.xml" value="0.152" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_dark_blue_fil.xml" value="0.152" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_dark_grey_fil.xml" value="0.152" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_white_fil.xml" value="0.152" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/header_gradient_color.xml" value="0.1495" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.2175" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.169" />
@@ -26,7 +30,8 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/toggle_widget_background.xml" value="0.136" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_back_testing.xml" value="0.23802083333333332" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_dash_board.xml" value="0.264" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_chart.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_dash_board.xml" value="0.2" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_home.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_landing.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_login.xml" value="0.264" />
