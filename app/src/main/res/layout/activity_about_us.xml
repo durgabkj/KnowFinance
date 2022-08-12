@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AboutUsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ablLanding"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/appColor"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mtbAboutUsFinance"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white"
+                app:title="About US"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                app:subtitleCentered="true"
+                android:textAlignment="center"
+                android:layout_marginStart="5dp"
+                tools:ignore="MissingConstraints"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardMaxElevation="20dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="200dp"
+                    android:elevation="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/landingimage"
+                        android:scaleType="centerCrop"/>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M.r Nitin Sharma"
+                        android:textAlignment="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/mo_re"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[Founder]"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/mo_re"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardMaxElevation="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/appColor"
+                app:cardCornerRadius="8dp"
+                android:elevation="10dp"
+                >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Building a website is an exercise of willpower. The bells and whistles of the design process are tempting to focus on, but compelling content is what makes a website work for your business.Building a website is an exercise of willpower. The bells and whistles of the design process are tempting to focus on, but compelling content is what makes a website work for your business."
+                android:fontFamily="@font/mo_re"
+                android:layout_margin="10dp"
+                android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About Our Service"
+                        android:textAlignment="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/mo_re"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/appColor"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Know Finance Trading App"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/mo_re"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/appColor"/>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardMaxElevation="200dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="200dp"
+                    android:elevation="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/landingimage"
+                        android:scaleType="centerCrop"/>
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardMaxElevation="20dp"
+                app:cardBackgroundColor="@color/appColor"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Building a website is an exercise of willpower. The bells and whistles of the design process are tempting to focus on, but compelling content is what makes a website work for your business.Building a website is an exercise of willpower. The bells and whistles of the design process are tempting to focus on, but compelling content is what makes a website work for your business."
+                    android:fontFamily="@font/mo_re"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
