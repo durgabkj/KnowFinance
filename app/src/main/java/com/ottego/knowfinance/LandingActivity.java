@@ -142,6 +142,20 @@ public class LandingActivity extends AppCompatActivity {
                     return true;
                 }
 
+                if (id == R.id.nav_Service) {
+                    Intent intent = new Intent(context, ServiceActivity.class);
+                    startActivity(intent);
+                    b.dlLanding.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
+                if (id == R.id.nav_Contact) {
+                    Intent intent = new Intent(context, ContactUsActivity.class);
+                    startActivity(intent);
+                    b.dlLanding.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
                 return false;
             }
         });

@@ -9,14 +9,14 @@ import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
     Context context;
-  //  SessionManager sessionManager;
+    //  SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         context = MainActivity.this;
-       // sessionManager = new SessionManager(context);
+        // sessionManager = new SessionManager(context);
 
         start();
     }
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 //                if (sessionManager.isLoggedIn()) {
 //                    startActivity(new Intent(context, NavigationActivity.class));
 //                } else {
-                   startActivity(new Intent(context, LandingActivity.class));
+                startActivity(new Intent(context, LandingActivity.class));
 //                }
 
                 finish();
