@@ -158,7 +158,7 @@ public class LandingActivity extends AppCompatActivity {
 
 
                 if (id == R.id.nav_Pricing) {
-                    Intent intent = new Intent(context, PricingActivity.class);
+                    Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);
                     b.dlLanding.closeDrawer(GravityCompat.START);
                     return true;
