@@ -156,6 +156,14 @@ public class LandingActivity extends AppCompatActivity {
                     return true;
                 }
 
+
+                if (id == R.id.nav_Pricing) {
+                    Intent intent = new Intent(context, PricingActivity.class);
+                    startActivity(intent);
+                    b.dlLanding.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
                 return false;
             }
         });

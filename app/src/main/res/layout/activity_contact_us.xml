@@ -3,21 +3,265 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".ContactUsActivity">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:orientation="vertical">
 
-        <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ablContact"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/appColor"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtbContactFinance"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="MissingClass" />
-    </LinearLayout>
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:titleTextColor="@color/white"
+            app:title="Contact Us"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            android:layout_marginStart="5dp"
+            tools:ignore="MissingConstraints"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:cardMaxElevation="20dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/mo_re"
+                            android:text="Get In Touch"
+                            android:textColor="@color/appColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/mo_re"
+                            android:text="Hirawadi is an in Nashik, Nashik District, Maharashtra, India.            Vijaynagar Colony (0.78 Km), Amrutdham (0.91 Km), Krishna Nagar (2.07 Km), Rajpal Colony (3.15 Km), Panchavati (3.19 Km)" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:drawableStart="@drawable/ic_baseline_location_on_24"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/appColor"
+                            android:fontFamily="@font/mo_re"
+                            android:text="Location:"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:fontFamily="@font/mo_re"
+                            android:text="Nashik Road Bitco Point,Nashik Road Maharastra 422214" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@color/light_gray" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableStart="@drawable/ic_baseline_email_24"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/appColor"
+                            android:fontFamily="@font/mo_re"
+                            android:text="Email:"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:fontFamily="@font/mo_re"
+                            android:text="ngDigital0978@gmail.com" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@color/light_gray" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableStart="@drawable/ic_outline_local_phone_24"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/appColor"
+                            android:fontFamily="@font/mo_re"
+                            android:text="Phone:"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:fontFamily="@font/mo_re"
+                            android:maxLength="10"
+                            android:text="7689543667" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSubCast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:cardMaxElevation="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                style="@style/PersonalDataTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/mo_re"
+                                android:hint="Name" />
+
+                            <EditText
+                                android:id="@+id/tvUserSubCommunity"
+                                style="@style/PersonalDataTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/mo_re"
+                                android:hint="Your Email" />
+
+
+                        </LinearLayout>
+
+
+                        <EditText
+                            style="@style/PersonalDataTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/mo_re"
+                            android:hint="Subject" />
+
+
+                        <EditText
+                            android:id="@+id/etAddUserMessage"
+                            style="@style/PersonalDataTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:contentDescription="Enter Input Here"
+                            android:gravity="left"
+                            android:hint="Enter New Note"
+                            android:imeOptions="actionDone"
+                            android:lines="5"
+                            android:maxLength="2000"
+                            android:maxLines="40"
+                            android:scrollbars="vertical"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Save"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:backgroundTint="@color/appColor"
+                            android:fontFamily="@font/mo_re"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
 
 </LinearLayout>

@@ -23,9 +23,9 @@
             app:itemTextColor="@color/black" />
 
         <item
-            android:id="@+id/nav_Portfolio"
+            android:id="@+id/nav_Pricing"
             android:icon="@drawable/ic_baseline_list_alt_24"
-            android:title="Portfolio"
+            android:title="Pricing"
             app:itemTextColor="@color/black" />
 
         <item

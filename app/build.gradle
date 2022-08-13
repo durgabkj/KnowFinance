@@ -63,4 +63,9 @@ dependencies {
 
     implementation 'com.google.maps.android:android-maps-utils:2.3.0'
 
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+
 }
