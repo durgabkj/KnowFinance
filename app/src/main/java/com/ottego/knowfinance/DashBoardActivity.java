@@ -68,7 +68,7 @@ Context context;
                 }
 
                 if (id == R.id.nav_Chart) {
-                    Intent intent = new Intent(context, LandingActivity.class);
+                    Intent intent = new Intent(context, ChartActivity.class);
                     startActivity(intent);
                     b.dlMainActivity.closeDrawer(GravityCompat.START);
                     return true;

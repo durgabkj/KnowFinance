@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.window.SplashScreen;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,6 +21,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
+import com.ottego.knowfinance.Model.PricingModel;
 import com.ottego.knowfinance.databinding.ActivityLandingBinding;
 
 import java.util.Objects;
@@ -157,12 +159,12 @@ public class LandingActivity extends AppCompatActivity {
                 }
 
 
-                if (id == R.id.nav_Pricing) {
-                    Intent intent = new Intent(context, MainActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
+//                if (id == R.id.nav_Pricing) {
+//                    Intent intent = new Intent(context, Pricing.class);
+//                    startActivity(intent);
+//                    b.dlLanding.closeDrawer(GravityCompat.START);
+//                    return true;
+//                }
 
                 return false;
             }
