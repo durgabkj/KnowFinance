@@ -40,15 +40,32 @@
             </FrameLayout>
 
             <EditText
-                android:id="@+id/etRegisterName"
+                android:id="@+id/etRegisterFirstName"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/white_border_rounded_corner"
-                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawableStart="@drawable/ic_baseline_person_add_alt_1_24"
                 android:drawablePadding="15dp"
                 android:fontFamily="serif"
-                android:hint="Name"
+                android:hint="First-Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+
+
+            <EditText
+                android:id="@+id/etRegisterLastName"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_border_rounded_corner"
+                android:drawableStart="@drawable/ic_baseline_person_add_alt_1_24"
+                android:drawablePadding="15dp"
+                android:fontFamily="serif"
+                android:hint=" Last-Name"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingStart="15dp"
@@ -75,7 +92,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/white_border_rounded_corner"
-                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawableStart="@drawable/ic_outline_local_phone_24"
                 android:drawablePadding="15dp"
                 android:fontFamily="serif"
                 android:hint="Mobile"
@@ -118,7 +135,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/white_border_rounded_corner"
-                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawableStart="@drawable/ic_baseline_vpn_key_24"
                 android:drawablePadding="15dp"
                 android:fontFamily="serif"
                 android:hint="Password"
@@ -132,7 +149,7 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#449DEC"
+                android:backgroundTint="@color/appColor"
                 android:text="Register"
                 app:cornerRadius="4dp" />
 

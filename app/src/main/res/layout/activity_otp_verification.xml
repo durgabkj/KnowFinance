@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OtpVerificationActivity">
+
+
+
+
+
+    <ImageView
+        android:id="@+id/user_profile_photo"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/ic_undraw_forgot_password_re_hxwm"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/txtverify"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/mo_re"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="OTP Verification"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/mo_re"
+        android:layout_gravity="center"
+        android:text="Enter OTP Code sent to your mobile number "
+        android:textStyle="bold"/>
+
+
+
+    <TextView
+        android:id="@+id/tvmobileNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text=""
+        android:textStyle="bold"/>
+
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvTodayMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:translationZ="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            >
+
+
+            <com.chaos.view.PinView
+                android:id="@+id/firstPinView"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:inputType="number"
+                app:itemHeight="40dp"
+                android:layout_marginTop="20dp"
+                app:itemWidth="40dp"
+                android:textColor="@color/black"
+                app:itemCount="4"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:lineColor="@color/appColor"
+                app:viewType="rectangle"
+                android:textSize="16dp"
+                app:itemRadius="4dp"
+                app:itemSpacing="10dp"
+                android:itemBackground="#E7F4F6"
+
+                />
+
+
+            <TextView
+                android:id="@+id/btn_verify"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@color/appColor"
+                android:fontFamily="@font/mo_re"
+                android:padding="8dp"
+                android:text="Verify"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/mo_re"
+                    android:text=" Didn't received OTP ?"
+                    />
+                <TextView
+                    android:id="@+id/txtresentotp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Resend Otp"
+                    android:fontFamily="@font/mo_re"
+                    android:textColor="@color/appColor"
+                    android:textSize="18dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"/>
+
+
+</LinearLayout>
