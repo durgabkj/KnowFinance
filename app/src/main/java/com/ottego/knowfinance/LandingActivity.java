@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -42,7 +43,7 @@ public class LandingActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, b.dlLanding, b.mtbLandingFinance, R.string.navigation_open, R.string.navigation_close);
         b.dlLanding.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-
+//start();
         listener();
     }
 
@@ -101,77 +102,64 @@ public class LandingActivity extends AppCompatActivity {
         });
 
 
-
-        b.nvHeaderLanding.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = (item.getItemId());
-
-                if (id == R.id.nav_Home) {
-                    Intent intent = new Intent(context, LandingActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-                if (id == R.id.nav_About) {
-                    Intent intent = new Intent(context, AboutUsActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-
-                if (id == R.id.nav_Setting) {
-                    Intent intent = new Intent(context, SettingActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-                if (id == R.id.nav_Stock) {
-                    Intent intent = new Intent(context, AddStockInfoActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-                if (id == R.id.nav_Chart) {
-                    Intent intent = new Intent(context, LandingActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-                if (id == R.id.nav_Service) {
-                    Intent intent = new Intent(context, ServiceActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-                if (id == R.id.nav_Contact) {
-                    Intent intent = new Intent(context, ContactUsActivity.class);
-                    startActivity(intent);
-                    b.dlLanding.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-
-
-//                if (id == R.id.nav_Pricing) {
-//                    Intent intent = new Intent(context, Pricing.class);
+//
+//        b.nvHeaderLanding.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                int id = (item.getItemId());
+//
+//                if (id == R.id.nav_Home) {
+//                    Intent intent = new Intent(context, LandingActivity.class);
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 //                    startActivity(intent);
 //                    b.dlLanding.closeDrawer(GravityCompat.START);
 //                    return true;
 //                }
+//
+//                if (id == R.id.nav_About) {
+//                    Intent intent = new Intent(context, AboutUsActivity.class);
+//                    startActivity(intent);
+//                    b.dlLanding.closeDrawer(GravityCompat.START);
+//                    return true;
+//                }
+//
+//
+//                if (id == R.id.nav_Setting) {
+//                    Intent intent = new Intent(context, SettingActivity.class);
+//                    startActivity(intent);
+//                    b.dlLanding.closeDrawer(GravityCompat.START);
+//                    return true;
+//                }
+//
+//                if (id == R.id.nav_Stock) {
+//                    Intent intent = new Intent(context, AddStockInfoActivity.class);
+//                    startActivity(intent);
+//                    b.dlLanding.closeDrawer(GravityCompat.START);
+//                    return true;
+//                }
+//
+//                if (id == R.id.nav_Chart) {
+//                    Intent intent = new Intent(context, LandingActivity.class);
+//                    startActivity(intent);
+//                    b.dlLanding.closeDrawer(GravityCompat.START);
+//                    return true;
+//                }
+//
+//
+//
+////                if (id == R.id.nav_Pricing) {
+////                    Intent intent = new Intent(context, Pricing.class);
+////                    startActivity(intent);
+////                    b.dlLanding.closeDrawer(GravityCompat.START);
+////                    return true;
+////                }
+//
+//                return false;
+//            }
+//        });
 
-                return false;
-            }
-        });
 
     }
-
 
 
 

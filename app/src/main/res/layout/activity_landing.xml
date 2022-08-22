@@ -122,6 +122,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="start"
                     android:background="@color/white"
+                    android:visibility="gone"
                     app:headerLayout="@layout/header_drawer_layout"
                     app:itemHorizontalPadding="30dp"
                     app:menu="@menu/landing_menu" />

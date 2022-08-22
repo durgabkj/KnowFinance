@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    >
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                android:translationX="5dp"
+                app:cardElevation="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:rippleColor="@color/appColor"
+                android:layout_margin="3dp"
+                app:contentPadding="5dp"
+                app:strokeWidth="1dp"
+
+                >
+                <LinearLayout
+                    android:id="@+id/llAddStockList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvSno"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1.5"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        android:text="1."
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvTradeBackTest"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Trade" />
+
+
+                    <TextView
+                        android:id="@+id/tvSignalBackTest"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Signal" />
+
+
+                    <TextView
+                        android:id="@+id/tvDateBackTest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Date" />
+
+
+                    <TextView
+                        android:id="@+id/tvPriceBackTest"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Price" />
+
+                    <TextView
+                        android:id="@+id/tvQuantityBackTest"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Quantity" />
+
+                    <TextView
+                        android:id="@+id/tvPnlBackTest"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Pnl" />
+
+                    <TextView
+                        android:id="@+id/tvNetProfitBackTest"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Net Profit" />
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/tvDelete"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:src="@drawable/ic_sharp_delete_24"-->
+<!--                        />-->
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"/>
+</LinearLayout>

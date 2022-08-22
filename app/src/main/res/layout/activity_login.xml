@@ -40,7 +40,7 @@
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/white_border_rounded_corner"
+            android:background="@drawable/blue_border"
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawablePadding="15dp"
             android:fontFamily="serif"
@@ -55,7 +55,7 @@
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/white_border_rounded_corner"
+            android:background="@drawable/blue_border"
             android:drawableStart="@drawable/ic_baseline_vpn_key_24"
             android:drawablePadding="15dp"
             android:fontFamily="serif"
@@ -73,6 +73,7 @@
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/appColor"
             android:text="Login"
+            android:textColor="#013C49"
             app:cornerRadius="4dp" />
 
         <TextView
@@ -88,6 +89,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:textColor="#013C49"
             android:backgroundTint="@color/appColor"
             android:text="Register"
             app:cornerRadius="4dp" />

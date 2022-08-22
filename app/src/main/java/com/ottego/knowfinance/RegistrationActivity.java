@@ -109,10 +109,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
 
-        if (gender.isEmpty()) {
-            Toast.makeText(context, "Please select gender", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+
 
         if (firstName.isEmpty()) {
             b.etRegisterFirstName.setError("Please enter your first name");
@@ -158,6 +155,11 @@ public class RegistrationActivity extends AppCompatActivity {
             return false;
         } else {
             b.etRegisterEmail.setError(null);
+        }
+
+        if (gender.isEmpty()) {
+            Toast.makeText(context, "Please select gender", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
             if (password.isEmpty()) {
