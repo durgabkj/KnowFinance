@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -18,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
+import com.ottego.knowfinance.Adapter.StockAdapter;
+import com.ottego.knowfinance.Model.DataModelStockDetails;
 import com.ottego.knowfinance.Model.DataModelStockList;
 import com.ottego.knowfinance.databinding.ActivityAddStockInfoBinding;
 
@@ -30,6 +33,7 @@ import java.util.ArrayList;
 public class AddStockInfoActivity extends AppCompatActivity {
     //url of get Stock_name
     public String stock_name_url = Utils.BASEURL + "get/stock";
+    public String stock_Details_url = Utils.BASEURL + "get/saved/stock";
     ActivityAddStockInfoBinding binding;
     Context context;
     //  Module name
@@ -44,9 +48,13 @@ public class AddStockInfoActivity extends AppCompatActivity {
     //Adapter of stock_name
     ArrayAdapter<String> stockAdapter;
 
+    //model of stock_list
     DataModelStockList modelStockList;
+
+    //model of stock_details
+    DataModelStockDetails dataModelStockDetails;
     int mCounter = 0;
-    int increament;
+    String count;
     boolean module_click = true;
     boolean type_click = true;
     boolean stock_click = true;
@@ -69,6 +77,9 @@ public class AddStockInfoActivity extends AppCompatActivity {
 
         //call stock_list_data Api
         getStock_name_List();
+
+        //call stock details
+        getData();
         listener();
     }
 
@@ -166,8 +177,6 @@ public class AddStockInfoActivity extends AppCompatActivity {
                 } else {
                     if (position == 0) {
                         Toast.makeText(AddStockInfoActivity.this, "Select Stock Name", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(AddStockInfoActivity.this, type[position] + " Selected !", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -209,13 +218,22 @@ public class AddStockInfoActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String count = binding.tvQuantity.getText().toString();
+                count = binding.tvQuantity.getText().toString();
 
-                if (count.equalsIgnoreCase("1")) {
-                    binding.decrease.setVisibility(View.GONE);
-                }else{
-                    binding.decrease.setVisibility(View.VISIBLE);
+                if (binding.spType.getSelectedItem().toString().equalsIgnoreCase("Cash")) {
+                    if (count.equalsIgnoreCase("1")) {
+                        binding.decrease.setVisibility(View.GONE);
+                    } else {
+                        binding.decrease.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    if (count.equalsIgnoreCase("1")) {
+                        binding.decrease.setVisibility(View.GONE);
+                    } else {
+                        binding.decrease.setVisibility(View.VISIBLE);
+                    }
                 }
+
             }
 
             @Override
@@ -263,6 +281,48 @@ public class AddStockInfoActivity extends AppCompatActivity {
         MySingleton.myGetMySingleton(context).myAddToRequest(jsonObjectRequest);
 
         // listView.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) context);
+    }
+
+
+    public void getData() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                stock_Details_url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.e("response stock", String.valueOf(response));
+                Gson gson = new Gson();
+                if (response != null) {
+                    dataModelStockDetails = gson.fromJson(String.valueOf(response), DataModelStockDetails.class);
+                    setRecyclerView();
+
+                }
+            }
+        },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                        error.printStackTrace();
+
+                        Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+
+        };
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        MySingleton.myGetMySingleton(context).myAddToRequest(jsonObjectRequest);
+    }
+
+    private void setRecyclerView() {
+        //  GridLayoutManager layoutManager = new GridLayoutManager(context, 2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        binding.rvStockDetailsTable.setLayoutManager(layoutManager);
+        binding.rvStockDetailsTable.setHasFixedSize(true);
+        binding.rvStockDetailsTable.setNestedScrollingEnabled(true);
+        StockAdapter  stockAdapter= new StockAdapter(context, dataModelStockDetails.data);
+        binding.rvStockDetailsTable.setAdapter(stockAdapter);
+
     }
 }
 

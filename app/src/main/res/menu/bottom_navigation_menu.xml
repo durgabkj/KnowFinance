@@ -21,6 +21,10 @@
             android:icon="@drawable/ic_baseline_work_24"
             android:title="Add Stock"
             app:itemTextColor="@color/black" />
+        <item
+            android:id="@+id/nav_Trade"
+            android:title="Trade Status"
+            app:itemTextColor="@color/black" />
 
         <item
             android:id="@+id/nav_Chart"

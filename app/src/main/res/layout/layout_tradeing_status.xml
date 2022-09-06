@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    >
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                android:translationX="5dp"
+                app:cardElevation="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="1dp"
+                app:rippleColor="@color/appColor"
+                android:layout_marginTop="8dp"
+                app:contentPadding="5dp"
+                app:strokeWidth="1dp"
+
+                >
+                <LinearLayout
+                    android:id="@+id/llAddStockList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvTradeSno"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1.9"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        android:text="1."
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvTradeDateTime"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Date/Time" />
+
+
+                    <TextView
+                        android:id="@+id/tvTradeDateType"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Type" />
+
+
+                    <TextView
+                        android:id="@+id/tvSTOCK_NAME"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="STOCK_NAME" />
+
+
+                    <TextView
+                        android:id="@+id/tvLOTS"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="LOTS" />
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="status" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"/>
+</LinearLayout>

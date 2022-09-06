@@ -112,6 +112,13 @@ Context context;
                     return true;
                 }
 
+                if (id == R.id.nav_Trade) {
+                    Intent intent = new Intent(context, TradingStatusActivity.class);
+                    startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+
                 if (id == R.id.nav_Chart) {
                     Intent intent = new Intent(context, ChartActivity.class);
                     startActivity(intent);

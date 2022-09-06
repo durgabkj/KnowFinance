@@ -131,6 +131,7 @@
                         android:fontFamily="@font/mo_re"
                         android:gravity="center"
                         android:padding="5dp"
+                        android:visibility="gone"
                         android:text="Instrument"
                         android:textSize="11sp"
                         android:shadowColor="#000000"
@@ -193,7 +194,7 @@
 
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvPointTable"
+                        android:id="@+id/rvTradeListTable"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         />
