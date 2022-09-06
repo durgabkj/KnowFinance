@@ -26,8 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Utils {
-    public static String URL = "http://10.0.2.2/wed/event/";
-    //public static String URL = "http://192.168.137.1/wed/event/";
+    public static String BASEURL = "http://103.150.186.108:8004/api/";
     public static int SERVER_TIMEOUT = 30000;
 
     public final static boolean isValidEmail(CharSequence target) {
@@ -56,7 +55,7 @@ public class Utils {
     }
 
     public static void sendDeviceId(final Context context) {
-        final String url_device = Utils.URL + "deviceidset.php";
+        final String url_device = Utils.BASEURL + "deviceidset.php";
         final SessionManager sessionManager = new SessionManager(context);
         SharedPreferences pref = context.getSharedPreferences("firebase_sh", 0);
         final String firebaseId = pref.getString("firebaseid", null);

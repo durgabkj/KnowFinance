@@ -101,6 +101,7 @@
                                     android:layout_height="40dp"
                                     android:clickable="true"
                                     android:focusable="true"
+                                    android:prompt="@string/spinner_header"
                                     android:focusableInTouchMode="false"
                                     android:fontFamily="@font/mo_re"
                                     android:importantForAutofill="no"
@@ -200,15 +201,16 @@
                                 android:layout_marginTop="4dp"
                                 tools:ignore="UselessParent">
 
-                                <TextView
+                                <EditText
                                     android:id="@+id/tvQuantity"
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:fontFamily="@font/mo_re"
                                     android:hint="Quantity"
-                                    android:layout_marginStart="4dp"
+                                    android:background="@drawable/bg_edit_text"
+                                    android:padding="4dp"
                                     android:gravity="center_vertical"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/black"
                                      />
 
 

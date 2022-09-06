@@ -72,7 +72,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/my_violet_background_drawable.xml" value="0.184" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/pink_button_drawable_circular.xml" value="0.184" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/toggle_widget_background.xml" value="0.136" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_about_us.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_about_us.xml" value="0.2" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_back_testing.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_chart.xml" value="0.23802083333333332" />
@@ -94,6 +94,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/layout/adapter.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/content_back_testing.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/content_profile.xml" value="0.23697916666666666" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/dropdown_item.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_adapter.xml" value="0.22395833333333334" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_first2.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_module.xml" value="0.23802083333333332" />
