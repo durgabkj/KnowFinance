@@ -60,7 +60,6 @@
 
 
             <RadioGroup
-                android:checkedButton="@+id/rbEnableModule"
                 android:id="@+id/rgModule"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -133,7 +132,6 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/rbEnableModule2"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
@@ -142,6 +140,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:button="@null"
+                    android:id="@+id/rbSecondModule"
                     android:gravity="center"
                     android:text="Enable"
                     android:textStyle="bold"
@@ -156,7 +155,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/offer"
+                    android:id="@+id/rbSecondModule1"
                     android:button="@null"
                     android:gravity="center"
                     android:text="Disable"
@@ -204,11 +203,13 @@
                 android:layout_gravity="center"
                 android:text="Api Key" />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/etApiKey"
+                android:padding="10dp"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/mo_re"
                 style="@style/PersonalDataTextView"
                 android:hint="Api Key"/>
@@ -230,11 +231,13 @@
                 android:layout_gravity="center"
                 android:text="Api Secret" />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/etSecretKey"
+                android:singleLine="false"
+                android:padding="10dp"
                 style="@style/PersonalDataTextView"
                 android:hint="Api Secret"/>
 
@@ -256,10 +259,11 @@
                 android:textColor="@color/textcardColor"
                 android:text="User ID" />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:padding="10dp"
                 android:id="@+id/etUserId"
                 style="@style/PersonalDataTextView"
                 android:hint="EUser ID"/>
@@ -282,11 +286,12 @@
                 android:layout_gravity="center"
                 android:text="User Password" />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/mo_re"
+                android:padding="10dp"
                 android:id="@+id/etAddUserPassword"
                 style="@style/PersonalDataTextView"
                 android:hint="Password"/>
@@ -308,12 +313,14 @@
                 android:textColor="@color/textcardColor"
                 android:fontFamily="@font/mo_re"
                 android:layout_gravity="center"
-                android:text="TOTP Key" />
+                android:text="OTP Key" />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:padding="10dp"
+                android:singleLine="false"
                 android:fontFamily="@font/mo_re"
                 android:id="@+id/etAddUserOTPKey"
                 style="@style/PersonalDataTextView"

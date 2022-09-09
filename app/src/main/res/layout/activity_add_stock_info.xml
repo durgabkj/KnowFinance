@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/ablLanding"
             android:layout_width="match_parent"
@@ -23,12 +24,12 @@
                 android:id="@+id/mtbAddStockFinance"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:titleTextColor="@color/white"
-                app:title="Add Stocks"
-                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
                 android:layout_marginStart="5dp"
-                tools:ignore="MissingConstraints"/>
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                app:title="Add Stocks"
+                app:titleTextColor="@color/white"
+                tools:ignore="MissingConstraints" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,6 +39,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,48 +53,46 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="20dp"
-                    app:cardCornerRadius="4dp"
-                    app:cardMaxElevation="20dp"
                     android:layout_margin="10dp"
+                    android:elevation="20dp"
+                    android:translationZ="20dp"
                     app:cardBackgroundColor="@color/appColor"
+                    app:cardCornerRadius="4dp"
                     app:cardElevation="20dp"
-                    android:translationZ="20dp">
+                    app:cardMaxElevation="20dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
 
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
-<!--                            <TextView-->
-<!--                                android:id="@+id/tv_land_message"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:fontFamily="@font/mo_re"-->
-<!--                                android:layout_weight="1.2"-->
-<!--                                android:shadowColor="#000000"-->
-<!--                                android:shadowDx="2"-->
-<!--                                android:shadowDy="2"-->
-<!--                                android:shadowRadius="1.6"-->
-<!--                                android:text="Module"-->
-<!--                                android:textColor="@color/textcardColor"-->
-<!--                                android:textSize="13sp" />-->
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:fontFamily="@font/mo_re"
+                                android:shadowColor="#000000"
+                                android:shadowDx="2"
+                                android:shadowDy="2"
+                                android:shadowRadius="1.6"
+                                android:text="Module"
+                                android:textColor="@color/textcardColor"
+                                android:textSize="13sp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="1"
                                 android:background="@drawable/white_border_rounded_corner"
                                 android:orientation="vertical"
-                                android:layout_marginEnd="8dp"
-                                android:layout_weight="1"
-                                android:layout_marginTop="4dp"
                                 tools:ignore="UselessParent">
 
                                 <Spinner
@@ -101,35 +101,35 @@
                                     android:layout_height="40dp"
                                     android:clickable="true"
                                     android:focusable="true"
-                                    android:prompt="@string/spinner_header"
                                     android:focusableInTouchMode="false"
                                     android:fontFamily="@font/mo_re"
                                     android:importantForAutofill="no"
-                                    android:maxLines="1" />
+                                    android:maxLines="1"
+                                    android:prompt="@string/spinner_header" />
                             </LinearLayout>
 
 
-<!--                            <TextView-->
-<!--                                android:id="@+id/tvType"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:fontFamily="@font/mo_re"-->
-<!--                                android:layout_weight="1.2"-->
-<!--                                android:shadowColor="#000000"-->
-<!--                                android:shadowDx="2"-->
-<!--                                android:shadowDy="2"-->
-<!--                                android:shadowRadius="1.6"-->
-<!--                                android:text="Type"-->
-<!--                                android:textColor="@color/textcardColor"-->
-<!--                                android:textSize="13sp" />-->
+                            <TextView
+                                android:id="@+id/tvType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:fontFamily="@font/mo_re"
+                                android:shadowColor="#000000"
+                                android:shadowDx="2"
+                                android:shadowDy="2"
+                                android:shadowRadius="1.6"
+                                android:text="Type"
+                                android:textColor="@color/textcardColor"
+                                android:textSize="13sp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="1"
                                 android:background="@drawable/white_border_rounded_corner"
                                 android:orientation="vertical"
-                                android:layout_weight="1"
-                                android:layout_marginTop="4dp"
                                 tools:ignore="UselessParent">
 
                                 <Spinner
@@ -152,31 +152,30 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:orientation="horizontal"
-                            >
-<!--                            <TextView-->
-<!--                                android:id="@+id/tvStock"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:fontFamily="@font/mo_re"-->
-<!--                                android:layout_weight="1.2"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                android:shadowColor="#000000"-->
-<!--                                android:shadowDx="2"-->
-<!--                                android:shadowDy="2"-->
-<!--                                android:shadowRadius="1.6"-->
-<!--                                android:text="Stock"-->
-<!--                                android:textColor="@color/textcardColor"-->
-<!--                                android:textSize="13sp" />-->
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvStock"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1.2"
+                                android:fontFamily="@font/mo_re"
+                                android:shadowColor="#000000"
+                                android:shadowDx="2"
+                                android:shadowDy="2"
+                                android:shadowRadius="1.6"
+                                android:text="Stock name"
+                                android:textColor="@color/textcardColor"
+                                android:textSize="13sp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="1"
                                 android:background="@drawable/white_border_rounded_corner"
                                 android:orientation="vertical"
-                                android:layout_weight="1"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginTop="4dp"
                                 tools:ignore="UselessParent">
 
                                 <Spinner
@@ -188,89 +187,117 @@
                                     android:focusableInTouchMode="false"
                                     android:fontFamily="@font/mo_re"
                                     android:importantForAutofill="no"
-                                    android:maxLines="1"
-                                    />
+                                    android:maxLines="1" />
                             </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1.2"
+                                android:fontFamily="@font/mo_re"
+                                android:shadowColor="#000000"
+                                android:shadowDx="2"
+                                android:shadowDy="2"
+                                android:shadowRadius="1.6"
+                                android:text="Quantity"
+                                android:textColor="@color/textcardColor"
+                                android:textSize="13sp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/white_border_rounded_corner"
-                                android:orientation="vertical"
-                                android:layout_weight="1"
-                                android:layout_marginTop="4dp"
-                                tools:ignore="UselessParent">
+                                android:orientation="horizontal">
 
-                                <EditText
-                                    android:id="@+id/tvQuantity"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="40dp"
-                                    android:fontFamily="@font/mo_re"
-                                    android:hint="Quantity"
-                                    android:background="@drawable/bg_edit_text"
-                                    android:padding="4dp"
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/white_border_rounded_corner"
+                                    android:orientation="vertical"
+                                    tools:ignore="UselessParent">
+
+                                    <EditText
+                                        android:id="@+id/tvQuantity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/bg_edit_text"
+                                        android:fontFamily="@font/mo_re"
+                                        android:gravity="center_vertical"
+                                        android:hint="Quantity"
+                                        android:padding="4dp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llIcreaseDecrease"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:layout_weight=".5"
                                     android:gravity="center_vertical"
-                                    android:textColor="@color/black"
-                                     />
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/decrease"
+                                        android:layout_width="40dp"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:background="@drawable/white_border_rounded_corner"
+                                        android:gravity="center"
+                                        android:shadowColor="#000000"
+                                        android:shadowRadius="1.6"
+
+                                        android:text="-"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp" />
 
 
+                                    <Space
+                                        android:layout_width="10dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/increase"
+                                        android:layout_width="40dp"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:background="@drawable/white_border_rounded_corner"
+                                        android:gravity="center"
+                                        android:shadowColor="#000000"
+                                        android:shadowRadius="1.6"
+                                        android:text="+"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
                             </LinearLayout>
 
 
                         </LinearLayout>
 
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="4dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/decrease"
-                                android:layout_width="30dp"
-                                android:layout_height="20dp"
-                                android:gravity="center"
-                                android:layout_marginEnd="4dp"
-                                android:textStyle="bold"
-                                android:shadowColor="#000000"
-                                android:shadowDx="2"
-                                android:shadowDy="2"
-                                android:shadowRadius="1.6"
-                                android:background="@color/white"
-                                android:textColor="@color/black"
-                                android:text="-" />
-
-                            <TextView
-                                android:id="@+id/increase"
-                                android:layout_width="30dp"
-                                android:layout_height="20dp"
-                                android:gravity="center"
-                                android:shadowColor="#000000"
-                                android:shadowDx="2"
-                                android:shadowDy="2"
-                                android:shadowRadius="1.6"
-                                android:background="@color/white"
-                                android:textColor="@color/black"
-                                android:text="+" />
-                        </LinearLayout>
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/mbSaveStack"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Save"
                             android:layout_gravity="center"
-                            android:textColor="@color/appColor"
+                            android:layout_marginTop="10dp"
                             android:backgroundTint="@color/white"
                             android:fontFamily="@font/mo_re"
-                            android:textStyle="bold"/>
-
+                            android:text="Save"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="10dp"
-                            android:background="@color/appColor"/>
+                            android:background="@color/appColor" />
 
 
                     </LinearLayout>
@@ -283,8 +310,7 @@
                 android:layout_height="wrap_content"
                 android:fillViewport="true"
                 android:overScrollMode="always"
-                android:scrollbars="none"
-                >
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -295,98 +321,105 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:background="@color/appColor"
-                        android:padding="8dp"
-                        android:orientation="horizontal">
+                        android:background="@drawable/bg_window"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:fontFamily="@font/mo_re"
                             android:gravity="center"
                             android:padding="5dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="1.6"
                             android:text="Sr.No"
-                            android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="1.6"
-                            android:textSize="11sp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
+                        <Space
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content" />
+
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
                             android:fontFamily="@font/mo_re"
                             android:gravity="center"
                             android:padding="5dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="1.6"
                             android:text="Module"
-                            android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="1.6"
-                            android:textSize="11sp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
+                        <Space
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content" />
 
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
+                            android:layout_marginStart="8dp"
                             android:fontFamily="@font/mo_re"
-                            android:gravity="center"
                             android:padding="5dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="1.6"
                             android:text="Type"
-                            android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="1.6"
-                            android:textSize="11sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
+                        <Space
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content" />
+
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
                             android:fontFamily="@font/mo_re"
                             android:gravity="center"
                             android:padding="5dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="1.6"
                             android:text="Stock"
-                            android:textSize="11sp"
-                            android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="1.6"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
+                        <Space
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content" />
+
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:fontFamily="@font/mo_re"
                             android:gravity="center"
                             android:padding="5dp"
                             android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
+
                             android:shadowRadius="1.6"
                             android:text="Quantity"
-                            android:textSize="11sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
+                        <Space
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content" />
+
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
                             android:fontFamily="@font/mo_re"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Delete"
-                            android:textSize="11sp"
                             android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
                             android:shadowRadius="1.6"
+                            android:text="Delete"
+
+                            android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -400,19 +433,14 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rvStockDetailsTable"
                             android:layout_width="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:layout_height="match_parent"
-                            />
+                            android:layout_height="match_parent" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
 
-
-
             </HorizontalScrollView>
-
 
 
         </LinearLayout>

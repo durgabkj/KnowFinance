@@ -10,19 +10,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ottego.knowfinance.ApiListener;
 import com.ottego.knowfinance.Model.StockDetailsModel;
 import com.ottego.knowfinance.R;
+import com.ottego.knowfinance.Utils;
 
 import java.util.List;
 
 public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder> {
     List<StockDetailsModel> list;
     Context context;
+    ApiListener clickListener;
 
-
-    public StockAdapter(Context context, List<StockDetailsModel> list) {
+    public StockAdapter(Context context, List<StockDetailsModel> list, ApiListener clickListener) {
         this.list = list;
         this.context = context;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -42,6 +45,15 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
         holder.tvStock.setText(model.stock);
         holder.tvQuantity.setText(model.quantity);
 
+        //Delete function from utils
+
+        holder.tvDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utils.deleteStock(context, model.id, clickListener);
+            }
+        });
+
     }
 
     @Override
@@ -60,6 +72,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
             tvType = itemView.findViewById(R.id.tvType);
             tvStock = itemView.findViewById(R.id.tvStock);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
+            tvDelete = itemView.findViewById(R.id.tvDelete);
 
         }
     }

@@ -1,6 +1,8 @@
 package com.ottego.knowfinance;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -11,6 +13,7 @@ import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
@@ -88,8 +91,6 @@ public class Utils {
         }
         new SendDeviceId().execute();
     }
-
-
     public static String getTimeInMonth(String time) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss", Locale.US);
         SimpleDateFormat myFormat = new SimpleDateFormat("MMM dd yyyy, hh:mm a", Locale.US);
@@ -107,6 +108,57 @@ public class Utils {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-M-dd HH:mm:ss", Locale.US);
         String dateString = formatter.format(new Date(time));
         return dateString;
+    }
+
+    //delete stock...
+
+
+
+
+
+
+    public static void deleteStock(Context context, String id, ApiListener apiListener) {
+        String delete_stock_url = Utils.BASEURL + "delete/saved/stock/by/id";
+        final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, delete_stock_url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                Log.e("response", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String code = jsonObject.getString("results");
+                    if (code.equalsIgnoreCase("1")) {
+                        Toast.makeText(context, "Stock Deleted", Toast.LENGTH_SHORT).show();
+                        apiListener.onSuccess(0);
+                    } else {
+                        apiListener.onFail(0);
+                        Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(context, "Something went wrong, try again.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
+                        error.printStackTrace();
+                        Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", id);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
+
     }
 
 }
