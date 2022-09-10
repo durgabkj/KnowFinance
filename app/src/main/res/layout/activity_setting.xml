@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SettingActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/ablLanding"
             android:layout_width="match_parent"
@@ -22,12 +23,12 @@
                 android:id="@+id/mtbSettingFinance"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:titleTextColor="@color/white"
-                app:title="Settings"
-                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
                 android:layout_marginStart="5dp"
-                tools:ignore="MissingConstraints"/>
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                app:title="Settings"
+                app:titleTextColor="@color/white"
+                tools:ignore="MissingConstraints" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,69 +37,67 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_margin="30dp"
         android:gravity="center"
-        android:layout_margin="30dp">
+        android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1 St module"
-                android:textStyle="bold"
-                android:textColor="@color/textcardColor"
-                android:textAlignment="center"
                 android:layout_gravity="center"
-                android:fontFamily="@font/mo_re"/>
-
+                android:fontFamily="@font/mo_re"
+                android:text="1 St module"
+                android:textAlignment="center"
+                android:textColor="@color/textcardColor"
+                android:textStyle="bold" />
 
 
             <RadioGroup
                 android:id="@+id/rgModule"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:background="@drawable/blue_outline"
                 android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rbEnableModule"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginLeft="1dp"
-                    android:background="@drawable/toggle_widget_background"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:textStyle="bold"
+                    android:background="@drawable/toggle_widget_background"
                     android:button="@null"
                     android:fontFamily="@font/mo_re"
                     android:gravity="center"
                     android:text="Enable"
-                    android:textColor="@color/textcardColor" />
+                    android:textColor="@color/textcardColor"
+                    android:textStyle="bold" />
 
                 <RadioButton
-                    android:layout_marginRight="1dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:id="@+id/rbFirstModule"
+                    android:id="@+id/rbFirstModuleDisable"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:background="@drawable/toggle_widget_background"
                     android:button="@null"
+                    android:fontFamily="@font/mo_re"
                     android:gravity="center"
-                    android:textStyle="bold"
                     android:text="Disable"
                     android:textColor="@color/textcardColor"
-                    android:fontFamily="@font/mo_re"/>
+                    android:textStyle="bold" />
             </RadioGroup>
         </LinearLayout>
 
@@ -106,62 +105,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Heikin Ashi"
-                android:textStyle="bold"
-                android:textColor="@color/textcardColor"
-                android:textAlignment="center"
                 android:layout_gravity="center"
-                android:fontFamily="@font/mo_re"/>
-
+                android:fontFamily="@font/mo_re"
+                android:text="Heikin Ashi"
+                android:textAlignment="center"
+                android:textColor="@color/textcardColor"
+                android:textStyle="bold" />
 
 
             <RadioGroup
-                android:checkedButton="@+id/rbEnableModule2"
                 android:id="@+id/rgModule2"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:background="@drawable/blue_outline"
+                android:checkedButton="@+id/rbEnableModule2"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginLeft="1dp"
-                    android:background="@drawable/toggle_widget_background"
+                    android:id="@+id/rbSecondModule"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
+                    android:background="@drawable/toggle_widget_background"
                     android:button="@null"
-                    android:id="@+id/rbSecondModule"
+                    android:fontFamily="@font/mo_re"
                     android:gravity="center"
                     android:text="Enable"
-                    android:textStyle="bold"
                     android:textColor="@color/textcardColor"
-                    android:fontFamily="@font/mo_re"/>
+                    android:textStyle="bold" />
 
                 <RadioButton
-                    android:layout_marginRight="1dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:background="@drawable/toggle_widget_background"
+                    android:id="@+id/rbSecondModule1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:id="@+id/rbSecondModule1"
+                    android:background="@drawable/toggle_widget_background"
                     android:button="@null"
+                    android:fontFamily="@font/mo_re"
                     android:gravity="center"
                     android:text="Disable"
-                    android:textStyle="bold"
                     android:textColor="@color/textcardColor"
-                    android:fontFamily="@font/mo_re"
+                    android:textStyle="bold"
                     tools:ignore="DuplicateIds" />
             </RadioGroup>
         </LinearLayout>
@@ -170,170 +167,182 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="20dp"
-            android:background="@color/black"/>
-
+            android:background="@color/black" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/mo_re"
             android:text="ZERODHA-KITE Credientials"
             android:textColor="@color/black"
-            android:fontFamily="@font/mo_re"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
+            android:textStyle="bold" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:fontFamily="@font/mo_re"
-                android:textColor="@color/textcardColor"
-                android:layout_gravity="center"
-                android:text="Api Key" />
+                android:text="Api Key"
+                android:textColor="@color/textcardColor" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+            <EditText
                 android:id="@+id/etApiKey"
-                android:padding="10dp"
-                android:gravity="center_vertical"
-                android:fontFamily="@font/mo_re"
                 style="@style/PersonalDataTextView"
-                android:hint="Api Key"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/mo_re"
+                android:hint="Api Key"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:fontFamily="@font/mo_re"
-                android:textColor="@color/textcardColor"
-                android:layout_gravity="center"
-                android:text="Api Secret" />
+                android:text="Api Secret"
+                android:textColor="@color/textcardColor" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+            <EditText
                 android:id="@+id/etSecretKey"
-                android:singleLine="false"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 style="@style/PersonalDataTextView"
-                android:hint="Api Secret"/>
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/mo_re"
+                android:hint="Api Secret"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:layout_gravity="center"
                 android:fontFamily="@font/mo_re"
-                android:textColor="@color/textcardColor"
-                android:text="User ID" />
+                android:text="User ID"
+                android:textColor="@color/textcardColor" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
+            <EditText
                 android:id="@+id/etUserId"
                 style="@style/PersonalDataTextView"
-                android:hint="EUser ID"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="8dp"
+                android:singleLine="true"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/mo_re"
+                android:hint="Email"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:fontFamily="@font/mo_re"
-                android:textColor="@color/textcardColor"
-                android:layout_gravity="center"
-                android:text="User Password" />
+                android:text="User Password"
+                android:textColor="@color/textcardColor" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/mo_re"
-                android:padding="10dp"
+            <EditText
                 android:id="@+id/etAddUserPassword"
                 style="@style/PersonalDataTextView"
-                android:hint="Password"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mo_re"
+                android:hint="Password"
+                android:drawablePadding="8dp"
+                android:singleLine="true"
+                android:drawableTint="@color/black"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:textColor="@color/textcardColor"
                 android:fontFamily="@font/mo_re"
-                android:layout_gravity="center"
-                android:text="OTP Key" />
+                android:text="OTP Key"
+                android:textColor="@color/textcardColor" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:singleLine="false"
-                android:fontFamily="@font/mo_re"
+            <EditText
                 android:id="@+id/etAddUserOTPKey"
                 style="@style/PersonalDataTextView"
-                android:hint="TOTP Key"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mo_re"
+                android:hint="TOTP Key"
+                android:singleLine="false"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/black"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                />
 
         </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoginSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/appColor"
+            android:text="Set Credential"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
     </LinearLayout>
-
-
-
-
-
-
 
 
 </LinearLayout>
