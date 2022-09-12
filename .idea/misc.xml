@@ -72,9 +72,11 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/my_gradient_drawable_.xml" value="0.184" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/my_violet_background_drawable.xml" value="0.184" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/pink_button_drawable_circular.xml" value="0.184" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/side_border_green.xml" value="0.1595" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/toggle_widget_background.xml" value="0.136" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/white_bg.xml" value="0.1595" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_about_us.xml" value="0.2" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.264" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.2" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_back_testing.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_chart.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_contact_us.xml" value="0.264" />
@@ -102,6 +104,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/layout/header_drawer_layout.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_add_stock.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_back_test_margin.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_confirmation_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_custom_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_image_slider.xml" value="0.23697916666666666" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_lining.xml" value="0.1952991452991453" />

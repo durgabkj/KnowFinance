@@ -6,4 +6,5 @@ public class StockDetailsModel {
     public String type;
     public String stock;
     public String quantity;
+    public boolean isSelected=false;
 }

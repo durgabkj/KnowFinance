@@ -3,8 +3,6 @@ package com.ottego.knowfinance;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -41,12 +38,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddStockInfoActivity extends AppCompatActivity implements ApiListener {
+public class AddStockInfoActivity extends AppCompatActivity implements ApiListener, ShowDeleteButtonListener {
     //url of get Stock_name
     public String stock_name_url = Utils.BASEURL + "get/stock";
     public String stock_Details_url = Utils.BASEURL + "get/saved/stock";
     public String stock_add_url = Utils.BASEURL + "add/stock/details";
 
+    StockAdapter stockAdapter1;
     ActivityAddStockInfoBinding binding;
     Context context;
     //  Module name
@@ -77,17 +75,19 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
     String quantity;
     String stock_name;
     int mCounter = 0;
-    String count;
+    String mCount;
     boolean module_click = true;
     boolean type_click = true;
     boolean stock_click = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAddStockInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         context = AddStockInfoActivity.this;
+
+        //Receive count from Adapter
+
 
         //ArrayAdapter of module
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.dropdown_item, modules);
@@ -108,11 +108,8 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
         dialog = new Dialog(context);
 
 
-
-
         listener();
     }
-
 
     private void listener() {
 
@@ -131,9 +128,9 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String createdBy = binding.spModule.getSelectedItem().toString();
 
-                if(binding.spModule.getSelectedItem().toString().equalsIgnoreCase("1st Module")){
+                if (binding.spModule.getSelectedItem().toString().equalsIgnoreCase("1st Module")) {
                     module = "FirstModule";
-                }else{
+                } else {
                     module = "Heikin Ashi";
                 }
 
@@ -240,7 +237,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
                     binding.tvQuantity.setText(Integer.toString(mCounter));
                 } else {
-                    int value = Integer.parseInt(count) + Integer.parseInt(String.valueOf(original_value));
+                    int value = Integer.parseInt(mCount) + Integer.parseInt(String.valueOf(original_value));
                     binding.tvQuantity.setText(Integer.toString(value));
 
                 }
@@ -258,7 +255,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
                     binding.tvQuantity.setText(Integer.toString(mCounter));
                 } else {
-                    int value = Integer.parseInt(count) - Integer.parseInt(String.valueOf(original_value));
+                    int value = Integer.parseInt(mCount) - Integer.parseInt(String.valueOf(original_value));
                     binding.tvQuantity.setText(Integer.toString(value));
                 }
 
@@ -277,26 +274,24 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                count = binding.tvQuantity.getText().toString();
+                mCount = binding.tvQuantity.getText().toString();
                 if (binding.spType.getSelectedItem().toString().equalsIgnoreCase("Cash")) {
-                    if (count.equalsIgnoreCase("1")) {
+                    if (mCount.equalsIgnoreCase("1")) {
                         binding.decrease.setVisibility(View.GONE);
                     } else {
                         binding.decrease.setVisibility(View.VISIBLE);
                     }
                 } else {
-                    if (count.equalsIgnoreCase(String.valueOf(original_value))) {
+                    if (mCount.equalsIgnoreCase(String.valueOf(original_value))) {
                         binding.decrease.setVisibility(View.GONE);
                     } else {
                         binding.decrease.setVisibility(View.VISIBLE);
                     }
                 }
 
-                if(!count.isEmpty() && !count.equalsIgnoreCase(""))
-                {
+                if (!mCount.isEmpty() && !mCount.equalsIgnoreCase("")) {
                     binding.llIcreaseDecrease.setVisibility(View.VISIBLE);
                 }
-
 
 
             }
@@ -322,7 +317,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
     private boolean checkForm() {
 
         quantity = binding.tvQuantity.getText().toString().trim();
-        stock_type= binding.spType.getSelectedItem().toString().trim();
+        stock_type = binding.spType.getSelectedItem().toString().trim();
 
 
         if (binding.spModule.getSelectedItem().toString().trim().contains("Select Module")) {
@@ -387,6 +382,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
         // listView.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) context);
     }
+
     public void getData() {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
                 stock_Details_url, null, new Response.Listener<JSONObject>() {
@@ -423,11 +419,10 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
         binding.rvStockDetailsTable.setLayoutManager(layoutManager);
         binding.rvStockDetailsTable.setHasFixedSize(true);
         binding.rvStockDetailsTable.setNestedScrollingEnabled(true);
-        StockAdapter stockAdapter = new StockAdapter(context, dataModelStockDetails.data, this);
+        StockAdapter stockAdapter = new StockAdapter(context, dataModelStockDetails.data, this, this);
         binding.rvStockDetailsTable.setAdapter(stockAdapter);
 
     }
-
 
     private void submitForm() {
         final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
@@ -440,12 +435,18 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
                     JSONObject jsonObject = new JSONObject(response);
                     String code = jsonObject.getString("results");
                     if (code.equalsIgnoreCase("1")) {
-                         Toast.makeText(context, "Stock Added Successfully", Toast.LENGTH_SHORT).show();
-                         getData();
+
+                        Toast.makeText(context, "Stock Added Successfully", Toast.LENGTH_SHORT).show();
+                        getData();
+                        binding.tvQuantity.setText(" ");
+                        binding.spStock.setSelection(0);
+                        binding.spModule.setSelection(0);
+                        binding.spType.setSelection(0);
+
 //                        Intent intent = new Intent(context, LoginActivity.class);
                         //   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     } else {
-                       // Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -483,6 +484,15 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
     @Override
     public void onFail(int position) {
 
+    }
+
+    @Override
+    public void onShowAction(boolean isSelected) {
+        if (isSelected) {
+            binding.llDeleteSelected.setVisibility(View.VISIBLE);
+        } else {
+            binding.llDeleteSelected.setVisibility(View.GONE);
+        }
     }
 }
 

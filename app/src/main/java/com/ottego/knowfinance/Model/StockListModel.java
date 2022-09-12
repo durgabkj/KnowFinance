@@ -7,4 +7,5 @@ public class StockListModel {
     public String tradingsymbol_cash;
     public String tradingsymbol_future;
 
+
 }
