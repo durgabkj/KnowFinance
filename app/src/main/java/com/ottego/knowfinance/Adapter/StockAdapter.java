@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
@@ -24,10 +25,12 @@ import com.ottego.knowfinance.Model.StockDetailsModel;
 import com.ottego.knowfinance.R;
 import com.ottego.knowfinance.ShowDeleteButtonListener;
 import com.ottego.knowfinance.Utils;
+import com.ottego.knowfinance.ViewModel.StockViewModel;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Observer;
 import java.util.Set;
 
 public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder> {
@@ -35,7 +38,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
     Context context;
     ApiListener clickListener;
     ShowDeleteButtonListener listener;
-    StockDetailsModel model = null;
+    StockViewModel stockViewModel;
 
     public StockAdapter(Context context, List<StockDetailsModel> list, ApiListener clickListener, ShowDeleteButtonListener listener) {
         this.list = list;
@@ -55,7 +58,8 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
     @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-       model = list.get(i);
+
+        StockDetailsModel  model = list.get(i);
         holder.tvSno.setText(String.valueOf(i + 1));
         holder.tvModule.setText(model.module);
         holder.tvType.setText(model.type);
@@ -75,7 +79,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
         holder.tvDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setDialog();
+                setDialog(model);
             }
         });
 
@@ -87,9 +91,9 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
                     model.isSelected = false;
                     holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
                     holder.tvDelete.setVisibility(View.VISIBLE);
-//                    if (getSelectedData().size() == 0) {
-//                        listener.onShowAction(false);
-//                    }
+                    if (getSelectedData().size() == 0) {
+                        listener.onShowAction(false);
+                    }
                     Log.e("selected", String.valueOf(getSelectedData().size()));
 
                 } else {
@@ -98,33 +102,26 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
                     model.isSelected = true;
                     listener.onShowAction(true);
 
+                    Set s2 = new HashSet();
+                        List<String> ids = new ArrayList<>();    //  i.add(null);
+                        for (int j = 0; j <getSelectedData().size(); j++) {
+                            ids.add(String.valueOf(j));
+                            s2.add(String.valueOf(j));
 
-//                    Set s2 = new HashSet();
-//
-//                        List<String> ids = new ArrayList<>();    //  i.add(null);
-//                        for (int j = 0; j <getSelectedData().size(); j++) {
-//                            ids.add(String.valueOf(j));
-//                            s2.add(String.valueOf(j));
-//
-//                        }
-//                    String result_state = String.join(",", s2);
-//                    Log.e("result_state", String.valueOf(result_state));
-
+                        }
+                    String result_state = String.join(",", s2);
+                    Log.e("result_selected", String.valueOf(result_state));
                 }
+
             }
         });
 
-
-
-
     }
 
-    private void setDialog() {
+    private void setDialog( StockDetailsModel  model) {
         Dialog dialog = new Dialog(context, R.style.DialogStyle);
         dialog.setContentView(R.layout.layout_confirmation_dialog);
-
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.white_bg);
-
         ImageView btnClose = dialog.findViewById(R.id.btn_close);
         TextView btnCancel = dialog.findViewById(R.id.btn_no);
         TextView btnOk = dialog.findViewById(R.id.btn_yes);
@@ -141,6 +138,9 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
                 dialog.dismiss();
             }
         });
+
+
+
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,3 +191,4 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
         }
     }
 }
+

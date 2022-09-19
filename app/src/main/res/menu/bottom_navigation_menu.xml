@@ -18,13 +18,14 @@
 
         <item
             android:id="@+id/nav_Stock"
-            android:icon="@drawable/ic_baseline_work_24"
+            android:icon="@drawable/online_business"
             android:title="Add Stock"
             app:itemTextColor="@color/black" />
         <item
             android:id="@+id/nav_Trade"
             android:title="Trade Status"
-            app:itemTextColor="@color/black" />
+            app:itemTextColor="@color/black"
+            android:icon="@drawable/online"/>
 
         <item
             android:id="@+id/nav_Chart"
@@ -39,6 +40,13 @@
             android:title="Profile"
             app:itemTextColor="@color/black" />
 
+        <item
+            android:id="@+id/nav_Setting"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Setting"
+            app:itemTextColor="@color/black" />
+
+
     </group>
 
     <group android:checkableBehavior="single">
@@ -49,13 +57,6 @@
             app:itemTextColor="@color/black">
 
             <menu>
-
-                <item
-                    android:id="@+id/nav_Setting"
-                    android:icon="@drawable/ic_baseline_settings_24"
-                    android:title="Setting"
-                    app:itemTextColor="@color/black" />
-
 
                 <item
                     android:id="@+id/nav_About"

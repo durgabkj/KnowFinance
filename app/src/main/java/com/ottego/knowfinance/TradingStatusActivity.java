@@ -1,12 +1,13 @@
 package com.ottego.knowfinance;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -14,29 +15,36 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
-import com.ottego.knowfinance.Adapter.StockAdapter;
 import com.ottego.knowfinance.Adapter.TradeListAdapter;
-import com.ottego.knowfinance.Model.DataModelStockDetails;
 import com.ottego.knowfinance.Model.DataModelTradeList;
-import com.ottego.knowfinance.databinding.ActivityAddStockInfoBinding;
 import com.ottego.knowfinance.databinding.ActivityTradingStatusBinding;
 
 import org.json.JSONObject;
 
 public class TradingStatusActivity extends AppCompatActivity {
-ActivityTradingStatusBinding binding;
     public String trade_list = Utils.BASEURL + "get/trade/details";
-Context context;
+    ActivityTradingStatusBinding binding;
+    Context context;
     //model of Trade list
     DataModelTradeList dataModelTradeList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityTradingStatusBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         context = TradingStatusActivity.this;
-
+        listener();
         getData();
+    }
+
+    private void listener() {
+        binding.mtbTradingStatusFinance.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     public void getData() {
@@ -75,7 +83,7 @@ Context context;
         binding.rvTradeListTable.setLayoutManager(layoutManager);
         binding.rvTradeListTable.setHasFixedSize(true);
         binding.rvTradeListTable.setNestedScrollingEnabled(true);
-        TradeListAdapter tradeListAdapter= new TradeListAdapter(context, dataModelTradeList.data);
+        TradeListAdapter tradeListAdapter = new TradeListAdapter(context, dataModelTradeList.data);
         binding.rvTradeListTable.setAdapter(tradeListAdapter);
 
     }

@@ -1,17 +1,14 @@
 package com.ottego.knowfinance;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
-import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ottego.knowfinance.Adapter.SliderAdapter;
 import com.ottego.knowfinance.Model.SliderModel;
@@ -24,18 +21,19 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class BackTestingActivity extends AppCompatActivity {
-ActivityBackTestingBinding b;
-    final Calendar myCalendar= Calendar.getInstance();
-     int quantity=0;
+    final Calendar myCalendar = Calendar.getInstance();
+    public int count;
+    ActivityBackTestingBinding b;
+    int quantity = 0;
     // Urls of our images.
     String url1 = "https://dqvh7oj3vu3ch.cloudfront.net/720x,webp/fxmedia.s3.amazonaws.com/articles/How_to_backtest_a_trading_strategy.jpg";
     String url2 = "https://www.dhanistocks.com/blog/wp-content/uploads/2019/05/Important-functions-of-stock-market.jpg";
     String url3 = "https://tradingstrategyguides.com/wp-content/uploads/2018/03/backtest-trading-strategy.jpg";
-        public int count;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        b=ActivityBackTestingBinding.inflate(getLayoutInflater());
+        b = ActivityBackTestingBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
 
         b.rvOverView.setVisibility(View.VISIBLE);
@@ -95,58 +93,38 @@ ActivityBackTestingBinding b;
 
     private void listener() {
 
-        b.tvincrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quantity =  quantity+Integer.parseInt(b.etQuantity.getText().toString ());
-                quantity++;
-                updateValue(quantity);
-            }
-        });
-
-        b.tvdecrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // quantity= Integer.parseInt(b.etQuantity.getText().toString().trim());
-                quantity=  quantity-Integer.parseInt(b.etQuantity.getText().toString().trim());
-                quantity--;
-                updateValue(quantity);
-            }
-        });
-
-
-        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH,month);
-                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, day);
                 updateLabel();
             }
         };
-        DatePickerDialog.OnDateSetListener date1 =new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog.OnDateSetListener date1 = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH,month);
-                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, day);
                 updateLabelTo();
             }
         };
         b.etFromAgePartnerPreference.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(BackTestingActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(BackTestingActivity.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
         b.etToAgePartnerPreference.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(BackTestingActivity.this,date1,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(BackTestingActivity.this, date1, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 
-        b.mtbBackTest.setNavigationOnClickListener(new View.OnClickListener(){
+        b.mtbBackTest.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -212,18 +190,19 @@ ActivityBackTestingBinding b;
     }
 
     private void updateValue(int number) {
-        b.etQuantity.setText(""+ number);
+        b.etQuantity.setText("" + number);
     }
 
     private void updateLabel() {
-            String myFormat="MM/dd/yyyy";
-            SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
-            b.etFromAgePartnerPreference.setText(dateFormat.format(myCalendar.getTime()));
+        String myFormat = "MM/dd/yyyy";
+        SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.US);
+        b.etFromAgePartnerPreference.setText(dateFormat.format(myCalendar.getTime()));
 
     }
+
     private void updateLabelTo() {
-        String myFormat="MM/dd/yyyy";
-        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+        String myFormat = "MM/dd/yyyy";
+        SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.US);
         b.etToAgePartnerPreference.setText(dateFormat.format(myCalendar.getTime()));
 
     }

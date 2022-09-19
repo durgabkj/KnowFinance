@@ -397,7 +397,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
                 }
             }
         },
-
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {

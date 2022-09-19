@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Utils {
-    public static String BASEURL = "http://103.150.186.108:8004/api/";
+    public static String BASEURL = "http://103.150.186.108:8006/api/";
     public static int SERVER_TIMEOUT = 30000;
 
     public final static boolean isValidEmail(CharSequence target) {
