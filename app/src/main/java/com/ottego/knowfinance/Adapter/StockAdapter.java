@@ -67,14 +67,14 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
         holder.tvQuantity.setText(model.quantity);
 
         //Delete function from utils
-        if (model.isSelected) {
-            holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.side_border_green));
-            holder.tvDelete.setVisibility(View.INVISIBLE);
-        } else {
-            holder.tvDelete.setVisibility(View.VISIBLE);
-           // holder.llDataShow.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
-            holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
-        }
+//        if (model.isSelected) {
+//            holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.side_border_green));
+//            holder.tvDelete.setVisibility(View.INVISIBLE);
+//        } else {
+//            holder.tvDelete.setVisibility(View.VISIBLE);
+//           // holder.llDataShow.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
+//            holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
+//        }
 
         holder.tvDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,37 +84,37 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
         });
 
         //multiple selection item
-        holder.llDataShow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (model.isSelected) {
-                    model.isSelected = false;
-                    holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
-                    holder.tvDelete.setVisibility(View.VISIBLE);
-                    if (getSelectedData().size() == 0) {
-                        listener.onShowAction(false);
-                    }
-                    Log.e("selected", String.valueOf(getSelectedData().size()));
-
-                } else {
-                    holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.side_border_green));
-                    holder.tvDelete.setVisibility(View.INVISIBLE);
-                    model.isSelected = true;
-                    listener.onShowAction(true);
-
-                    Set s2 = new HashSet();
-                        List<String> ids = new ArrayList<>();    //  i.add(null);
-                        for (int j = 0; j <getSelectedData().size(); j++) {
-                            ids.add(String.valueOf(j));
-                            s2.add(String.valueOf(j));
-
-                        }
-                    String result_state = String.join(",", s2);
-                    Log.e("result_selected", String.valueOf(result_state));
-                }
-
-            }
-        });
+//        holder.llDataShow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (model.isSelected) {
+//                    model.isSelected = false;
+//                    holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.color.white));
+//                    holder.tvDelete.setVisibility(View.VISIBLE);
+//                    if (getSelectedData().size() == 0) {
+//                        listener.onShowAction(false);
+//                    }
+//                    Log.e("selected", String.valueOf(getSelectedData().size()));
+//
+//                } else {
+//                    holder.cvStockList.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.side_border_green));
+//                    holder.tvDelete.setVisibility(View.INVISIBLE);
+//                    model.isSelected = true;
+//                    listener.onShowAction(true);
+//
+//                    Set s2 = new HashSet();
+//                        List<String> ids = new ArrayList<>();    //  i.add(null);
+//                        for (int j = 0; j <getSelectedData().size(); j++) {
+//                            ids.add(String.valueOf(j));
+//                            s2.add(String.valueOf(j));
+//
+//                        }
+//                    String result_state = String.join(",", s2);
+//                    Log.e("result_selected", String.valueOf(result_state));
+//                }
+//
+//            }
+//        });
 
     }
 
@@ -185,8 +185,6 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
             tvDelete = itemView.findViewById(R.id.tvDelete);
             llAddStockList = itemView.findViewById(R.id.llAddStockList);
-            llDataShow = itemView.findViewById(R.id.llDataShow);
-            cvStockList = itemView.findViewById(R.id.cvStockList);
 
         }
     }

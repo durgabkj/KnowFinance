@@ -1,5 +1,6 @@
 package com.ottego.knowfinance;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -8,8 +9,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,6 +39,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -112,6 +117,17 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
     }
 
     private void listener() {
+        //add stock
+
+        binding.addStockButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.llAddStock.setVisibility(View.VISIBLE);
+                binding.addStockButton.setVisibility(View.GONE);
+            }
+        });
+
+
 
         // Back on click back button
         binding.mtbAddStockFinance.setNavigationOnClickListener(new View.OnClickListener() {
@@ -312,6 +328,39 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
             }
         });
 
+        binding.calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar c = Calendar.getInstance();
+
+                // on below line we are getting
+                // our day, month and year.
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+
+                // on below line we are creating a variable for date picker dialog.
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        // on below line we are passing context.
+                        AddStockInfoActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+
+
+                            }
+                        },
+                        // on below line we are passing year,
+                        // month and day for selected date in our date picker.
+                        year, month, day);
+                // at last we are calling show to
+                // display our date picker dialog.
+                datePickerDialog.show();
+            }
+        });
+
+
     }
 
     private boolean checkForm() {
@@ -420,6 +469,15 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
         binding.rvStockDetailsTable.setNestedScrollingEnabled(true);
         StockAdapter stockAdapter = new StockAdapter(context, dataModelStockDetails.data, this, this);
         binding.rvStockDetailsTable.setAdapter(stockAdapter);
+//        if (stockAdapter.getItemCount() != 0) {
+//            binding.noData.setVisibility(View.GONE);
+//            binding.rvStockDetailsTable.setVisibility(View.VISIBLE);
+//        } else {
+//            binding.noData.setVisibility(View.VISIBLE);
+//            Animation animation = AnimationUtils.loadAnimation(context, R.anim.zoom);
+//            binding.noData.startAnimation(animation);
+//        }
+
 
     }
 
@@ -441,6 +499,8 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
                         binding.spStock.setSelection(0);
                         binding.spModule.setSelection(0);
                         binding.spType.setSelection(0);
+                        binding.addStockButton.setVisibility(View.VISIBLE);
+                        binding.llAddStock.setVisibility(View.GONE);
 
 //                        Intent intent = new Intent(context, LoginActivity.class);
                         //   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -487,11 +547,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
     @Override
     public void onShowAction(boolean isSelected) {
-        if (isSelected) {
-            binding.llDeleteSelected.setVisibility(View.VISIBLE);
-        } else {
-            binding.llDeleteSelected.setVisibility(View.GONE);
-        }
+
     }
 }
 
