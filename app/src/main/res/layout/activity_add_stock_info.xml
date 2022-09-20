@@ -287,18 +287,40 @@
 
                         </LinearLayout>
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"
+    >
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbSaveStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/mo_re"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/mbSaveStack"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:backgroundTint="@color/white"
-                            android:fontFamily="@font/mo_re"
-                            android:text="Save"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbCancelStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/mo_re"
+        android:textAllCaps="false"
+        android:text="Cancel"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+</LinearLayout>
+
 
                         <View
                             android:layout_width="match_parent"
@@ -444,8 +466,7 @@
                                 android:drawablePadding="8dp"
                                 android:drawableLeft="@drawable/ic_baseline_add_circle_outline_24"
                                 android:drawableTint="@color/appColor"
-                                android:layout_weight="0.5"
-                                android:layout_marginBottom="20dp"/>
+                            />
 
 
                         </LinearLayout>
@@ -456,6 +477,7 @@
                             android:layout_height="20dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
+                            android:visibility="gone"
                             android:background="@drawable/calendar"
                             android:id="@+id/calendar"/>
 

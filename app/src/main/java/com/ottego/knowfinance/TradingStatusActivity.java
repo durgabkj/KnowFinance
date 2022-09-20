@@ -39,6 +39,34 @@ public class TradingStatusActivity extends AppCompatActivity {
     }
 
     private void listener() {
+
+        //Tab
+
+
+        binding.experiencebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                binding.rvTradeListTable.setVisibility(View.GONE);
+                binding.rv1stModuleTradeListTable.setVisibility(View.VISIBLE);
+                binding.reviewbtn.setTextColor(getResources().getColor(R.color.light_gray));
+                binding.experiencebtn.setTextColor(getResources().getColor(R.color.appColor));
+
+            }
+        });
+
+        binding.reviewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.rv1stModuleTradeListTable.setVisibility(View.GONE);
+                binding.rvTradeListTable.setVisibility(View.VISIBLE);
+                binding.experiencebtn.setTextColor(getResources().getColor(R.color.light_gray));
+                binding.reviewbtn.setTextColor(getResources().getColor(R.color.appColor));
+
+            }
+        });
+
+
         binding.mtbTradingStatusFinance.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,140 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical">
-
-    <HorizontalScrollView
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true"
-        android:scrollbars="none">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        android:layout_height="160dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:elevation="8dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="4dp"
-                app:contentPadding="5dp"
-                app:rippleColor="@color/appColor"
-                app:strokeWidth="1dp"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
 
-                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S.No."
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/appColor"
+                    android:alpha="0.9"/>
+
+                <TextView
+                    android:id="@+id/tvTradeSno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@android:color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
 
                 <LinearLayout
-                    android:id="@+id/llAddStockList"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="10dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/tvTradeSno"
-                        android:layout_width="50dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1.9"
                         android:ellipsize="end"
                         android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Stock :   "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:id="@+id/tvSTOCK_NAME"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center_vertical"
+                        android:padding="3dp"
+                        android:singleLine="false"
+                        android:text="HDFC LIFE INSURENCE COMPANY LIMITED"
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Status :  "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
                         android:padding="5dp"
                         android:singleLine="true"
-                        android:text="1."
+                        android:text="Heikin Ashi"
+                        android:textAlignment="center"
                         android:textColor="@color/black" />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Type :"
+                            android:textAlignment="center"
+                            android:textColor="@color/appColor" />
+
+                        <TextView
+                            android:id="@+id/tvTradeDateType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:text="Future"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Date &amp; Time :"
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
 
                     <TextView
                         android:id="@+id/tvTradeDateTime"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:ellipsize="end"
-                        android:layout_marginStart="10dp"
                         android:fontFamily="serif"
-                        android:textColor="@color/black"
-                        android:gravity="center"
                         android:padding="5dp"
                         android:singleLine="true"
-                        android:text="Date/Time"
-                        android:textAlignment="center" />
+                        android:textColor="@color/black" />
 
 
-                    <TextView
-                        android:id="@+id/tvTradeDateType"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:textColor="@color/black"
 
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="serif"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:singleLine="true"
-                        android:text="Type"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_height="wrap_content">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Qty :"
+                            android:textAlignment="center"
+                            android:textColor="@color/appColor" />
 
-                    <TextView
-                        android:id="@+id/tvSTOCK_NAME"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textColor="@color/black"
-                        android:ellipsize="end"
-                        android:fontFamily="serif"
-                        android:gravity="center"
-                        android:maxLength="35"
-                        android:layout_marginStart="40dp"
-                        android:padding="5dp"
-                        android:singleLine="true"
-                        android:text="STOCK_NAME"
-                        android:textAlignment="center" />
+                        <TextView
+                            android:id="@+id/tvLOTS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
 
 
-                    <TextView
-                        android:id="@+id/tvLOTS"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:textColor="@color/black"
-                        android:fontFamily="serif"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:singleLine="true"
-                        android:text="LOTS"
-                        android:textAlignment="center" />
-
-                    <TextView
-                        android:id="@+id/tvStatus"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:fontFamily="serif"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:textColor="@color/black"
-                        android:singleLine="true"
-                        android:text="status"
-                        android:textAlignment="center" />
-
+                    </LinearLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    </HorizontalScrollView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/light_gray" />
-</LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+

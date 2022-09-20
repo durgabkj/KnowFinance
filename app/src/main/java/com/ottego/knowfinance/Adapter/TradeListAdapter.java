@@ -1,6 +1,8 @@
 package com.ottego.knowfinance.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,16 +35,19 @@ public class TradeListAdapter extends RecyclerView.Adapter<TradeListAdapter.MyVi
             return new TradeListAdapter.MyViewHolder(view);
         }
 
+        @SuppressLint("ResourceAsColor")
         @Override
         public void onBindViewHolder(@NonNull TradeListAdapter.MyViewHolder holder, int i) {
             final TradeListModel model = list.get(i);
 
-            holder.tvTradeSno.setText(model.id);
+            holder.tvTradeSno.setText(String.valueOf(i + 1));
             holder.tvTradeDateTime.setText(model.datetime);
             holder.tvTradeDateType.setText(model.type);
             holder.tvSTOCK_NAME.setText(model.STOCK_NAME);
             holder.tvLOTS.setText(model.LOTS);
             holder.tvStatus.setText(model.status);
+
+            holder.tvStatus.setTextColor(Color.parseColor("#4caf50"));
 
         }
 

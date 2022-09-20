@@ -117,13 +117,28 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
     }
 
     private void listener() {
-        //add stock
 
+
+
+        //cancel
+        binding.mbCancelStack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.llAddStock.setVisibility(View.GONE);
+                binding.rvStockDetailsTable.setVisibility(View.VISIBLE);
+                binding.addStockButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+
+        //add stock
         binding.addStockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 binding.llAddStock.setVisibility(View.VISIBLE);
                 binding.addStockButton.setVisibility(View.GONE);
+                binding.rvStockDetailsTable.setVisibility(View.GONE);
             }
         });
 
@@ -500,6 +515,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
                         binding.spModule.setSelection(0);
                         binding.spType.setSelection(0);
                         binding.addStockButton.setVisibility(View.VISIBLE);
+                        binding.rvStockDetailsTable.setVisibility(View.VISIBLE);
                         binding.llAddStock.setVisibility(View.GONE);
 
 //                        Intent intent = new Intent(context, LoginActivity.class);
