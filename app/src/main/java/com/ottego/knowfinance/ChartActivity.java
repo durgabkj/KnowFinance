@@ -124,7 +124,7 @@ listener();
         webview.getSettings().setAppCacheEnabled(true);
         webview.getSettings().setDatabaseEnabled(true);
         webview.setWebViewClient(new WebViewClient());
-        String url = "https://www.investing.com/equities/livedeal-candlestick";
+        String url = "https://in.tradingview.com/chart/?symbol=NSE%3ABANKNIFTY";
         webview.loadUrl(url);
 
     }

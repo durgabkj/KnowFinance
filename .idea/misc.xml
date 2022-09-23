@@ -84,6 +84,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_chart.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_contact_us.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_dash_board.xml" value="0.264" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_finger_authentication.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_forget_password.xml" value="0.4" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_home.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_landing.xml" value="0.2" />
@@ -100,8 +101,11 @@
         <entry key="..\:/KnowFinance/app/src/main/res/layout/adapter.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/content_back_testing.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/content_profile.xml" value="0.23697916666666666" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/dialog_auth.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/dropdown_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/finger_print_dialog.xml" value="0.23697916666666666" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_adapter.xml" value="0.22395833333333334" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_finger_authentication.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_first2.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/fragment_module.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/header_drawer_layout.xml" value="0.23802083333333332" />

@@ -182,7 +182,7 @@ tools:openDrawer="start">
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="100dp"
-                                android:background="@drawable/bg_window"
+                                android:background="@drawable/my_gradient_drawable_"
                                 android:minHeight="100dp"
                                 android:padding="10dp">
 

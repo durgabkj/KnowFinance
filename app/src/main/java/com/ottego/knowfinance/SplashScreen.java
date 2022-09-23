@@ -36,7 +36,7 @@ context=SplashScreen.this;
 ////                Intent intent=new Intent(MainActivity.this,NavigationActivity.class);
 ////                startActivity(intent);
 
-                startActivity(new Intent(context, DashBoardActivity.class));
+                startActivity(new Intent(context, FingerAuthenticationActivity.class));
             }
 
         }, 2000);
