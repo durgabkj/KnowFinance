@@ -3,7 +3,9 @@ package com.ottego.knowfinance;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -27,6 +29,7 @@ import java.util.TimerTask;
 public class DashBoardActivity extends AppCompatActivity {
 ActivityDashBoardBinding b;
 Context context;
+    MyReceiver myReceiver = new MyReceiver();
     Handler delayhandler;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -195,5 +198,24 @@ Context context;
         Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show();
 
         mHandler.postDelayed(mRunnable, 2000);
+    }
+
+
+
+    @Override
+    protected void onStart() {
+
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+
+        registerReceiver(myReceiver, filter);
+
+        super.onStart();
+    }
+
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(myReceiver);
+        super.onStop();
     }
 }

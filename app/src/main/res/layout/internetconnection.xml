@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/wifi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oops! no internet"
+        android:textAllCaps="true"
+        android:fontFamily="@font/mo_re"
+        android:textStyle="bold"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mo_re"
+        android:text="Please check your internet connection"
+
+        />
+
+
+    <Button
+        android:id="@+id/tvTryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:fontFamily="@font/mo_re"
+        android:backgroundTint="@color/appColor"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="Try Again"
+        />
+
+</LinearLayout>
