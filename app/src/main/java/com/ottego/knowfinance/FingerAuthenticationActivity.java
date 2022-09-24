@@ -97,7 +97,7 @@ public class FingerAuthenticationActivity extends AppCompatActivity {
     BiometricPrompt.PromptInfo.Builder dialogMetric() {
         //Show prompt dialog
         return new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Biometric login")
+                .setTitle("Biometric Verify")
                 .setSubtitle("Log in using your biometric credential");
 
 

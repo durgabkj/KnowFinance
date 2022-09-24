@@ -8,16 +8,18 @@ import android.os.Handler;
 
 import com.ottego.knowfinance.databinding.ActivitySplashScreenBinding;
 
-public class SplashScreen extends Activity
-{
+public class SplashScreen extends Activity {
     ActivitySplashScreenBinding b;
     Context context;
+    SessionManager sessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        b=ActivitySplashScreenBinding.inflate(getLayoutInflater());
+        b = ActivitySplashScreenBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
-context=SplashScreen.this;
+        context = SplashScreen.this;
+        sessionManager = new SessionManager(context);/**/
         start();
     }
 
@@ -25,18 +27,14 @@ context=SplashScreen.this;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-////                if (sessionManager.isLoggedIn()) {
-//                    startActivity(new Intent(context, DashBoardActivity.class));
-////                } else {
-////                    startActivity(new Intent(context, LandingActivity.class));
-////                }
-//
-//                finish();
-//
-////                Intent intent=new Intent(MainActivity.this,NavigationActivity.class);
-////                startActivity(intent);
+                if (sessionManager.isLoggedIn()) {
+                    startActivity(new Intent(context, FingerAuthenticationActivity.class));
+                } else {
+                    startActivity(new Intent(context, LoginActivity.class));
+                }
 
-                startActivity(new Intent(context, FingerAuthenticationActivity.class));
+                finish();
+
             }
 
         }, 2000);

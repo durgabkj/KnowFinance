@@ -1,5 +1,6 @@
 package com.ottego.knowfinance;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +12,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+import com.ottego.knowfinance.Model.RegistrationModel;
 import com.ottego.knowfinance.databinding.ActivityRegistationBinding;
 
 import org.json.JSONException;
@@ -27,20 +32,24 @@ import java.util.Map;
 public class RegistrationActivity extends AppCompatActivity {
     ActivityRegistationBinding b;
     Context context;
-    String registerUrl = "register";
+    String registerUrl = Utils.BASEURL+"register/";
     String firstName = "";
     String lastName = "";
     String email = "";
     String gender = "";
+    String username = "";
     String phone = "";
     String password = "";
-
+RegistrationModel model;
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         b = ActivityRegistationBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
         context = RegistrationActivity.this;
+        sessionManager = new SessionManager(context);
+
         listener();
     }
 
@@ -105,11 +114,8 @@ public class RegistrationActivity extends AppCompatActivity {
         lastName = b.etRegisterLastName.getText().toString().trim();
         phone = b.etRegisterMobile.getText().toString().trim();
         email = b.etRegisterEmail.getText().toString().trim();
+        username = b.etRegisterUserName.getText().toString().trim();
         password = b.etRegisterPassword.getText().toString().trim();
-
-
-
-
 
         if (firstName.isEmpty()) {
             b.etRegisterFirstName.setError("Please enter your first name");
@@ -157,9 +163,18 @@ public class RegistrationActivity extends AppCompatActivity {
             b.etRegisterEmail.setError(null);
         }
 
-        if (gender.isEmpty()) {
-            Toast.makeText(context, "Please select gender", Toast.LENGTH_SHORT).show();
+//        if (gender.isEmpty()) {
+//            Toast.makeText(context, "Please select gender", Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+
+        if (username.isEmpty()) {
+            b.etRegisterUserName.setError("Please enter username");
+            b.etRegisterUserName.setFocusableInTouchMode(true);
+            b.etRegisterUserName.requestFocus();
             return false;
+        } else {
+            b.etRegisterUserName.setError(null);
         }
 
             if (password.isEmpty()) {
@@ -180,52 +195,57 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void submitForm() {
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("firstName", firstName);
-        params.put("lastName", lastName);
-        params.put("email", email);
-        params.put("gender", gender);
-        params.put("phone", phone);
 //        params.put("role", Utils.role_user);
+            final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, registerUrl, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    progressDialog.dismiss();
+                    Log.e("response", response);
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String code = jsonObject.getString("results");
+                        if (code.equalsIgnoreCase("1")) {
+                            Gson gson = new Gson();
+                            model= gson.fromJson(String.valueOf(response), RegistrationModel.class);
 
-        Log.e("params", String.valueOf(params));
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, registerUrl, new JSONObject(params),
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e("response", String.valueOf((response)));
-                        try {
-                            String code = response.getString("result");
-                            if (code.equalsIgnoreCase("1")) {
-//                                    Gson gson = new Gson();
-//                                    UserModel sessionModel = gson.fromJson(String.valueOf((response)), UserModel.class);
-//                                   // sessionManager.createSUserDetails(sessionModel);
-                                // Toast.makeText(context, response.getString("message"), Toast.LENGTH_SHORT).show();  // sessionManager.createSessionLogin(userId);
-                                Intent intent = new Intent(context, OtpVerificationActivity.class);
-                                intent.putExtra("mobile", phone);
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(context, response.getString("message"), Toast.LENGTH_SHORT).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(context, "Something went wrong, try again.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        if (null != error.networkResponse) {
-                            Log.e("Error response", String.valueOf(error));
-                        }
-                    }
-                });
+                            Toast.makeText(context, "Registration Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(context, LoginActivity.class);
+                            intent.putExtra("token",model.token);
+                            startActivity(intent);
+                            sessionManager.createSessionToken(model.token);
 
-        request.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        MySingleton.myGetMySingleton(context).myAddToRequest(request);
-    }
+                        } else {
+                            Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    progressDialog.dismiss();
+                    error.printStackTrace();
+                    Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("first_name", firstName);
+                    params.put("last_name", lastName);
+                    params.put("email", email);
+                    params.put("username", username);
+                    params.put("mobile_no", phone);
+                    params.put("password", password);
+                    return params;
+                }
+            };
+            stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+            MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
+        }
 
 
 }

@@ -39,10 +39,10 @@ public class LandingActivity extends AppCompatActivity {
         setContentView(b.getRoot());
         context = LandingActivity.this;
 
-        setSupportActionBar(b.mtbLandingFinance);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, b.dlLanding, b.mtbLandingFinance, R.string.navigation_open, R.string.navigation_close);
-        b.dlLanding.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
+//        setSupportActionBar(b.mtbLandingFinance);
+//        actionBarDrawerToggle = new ActionBarDrawerToggle(this, b.dlLanding, b.mtbLandingFinance, R.string.navigation_open, R.string.navigation_close);
+//        b.dlLanding.addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
 //start();
         listener();
     }

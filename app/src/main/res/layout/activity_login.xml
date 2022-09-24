@@ -45,7 +45,7 @@
             android:drawablePadding="15dp"
             android:fontFamily="serif"
             android:hint="Username"
-            android:inputType="phone"
+            android:inputType="text"
             android:maxLines="1"
             android:paddingStart="15dp"
             android:paddingEnd="15dp" />

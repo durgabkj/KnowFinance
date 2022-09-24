@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ import java.util.TimerTask;
 public class DashBoardActivity extends AppCompatActivity {
 ActivityDashBoardBinding b;
 Context context;
+SessionManager sessionManager;
     MyReceiver myReceiver = new MyReceiver();
     Handler delayhandler;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -47,11 +49,15 @@ Context context;
         b = ActivityDashBoardBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
         context = DashBoardActivity.this;
+        sessionManager=new SessionManager(context);
         setSupportActionBar(b.mtbDashBoardFinance);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, b.dlMainActivity, b.mtbDashBoardFinance, R.string.navigation_open, R.string.navigation_close);
         b.dlMainActivity.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
        // setDialog();
+        b.tvUsername.setText(sessionManager.getUsername());
+        b.tvUserFullName.setText(sessionManager.getFirstName()+" "+sessionManager.getLastName());
+        b.tvUserFirstName.setText(sessionManager.getFirstName());
         dialogShow();
         listener();
     }
@@ -169,6 +175,22 @@ Context context;
                 if (id == R.id.nav_About) {
                     Intent intent = new Intent(context, AboutUsActivity.class);
                     startActivity(intent);
+                    b.dlMainActivity.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+                 if (id == R.id.nav_rating) {
+                     Intent intent = new Intent(Intent.ACTION_VIEW);
+                     intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.ottego.knowfinance\""));
+                     try {
+                         startActivity(intent);
+                     } catch (Exception e) {
+                         intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.ottego.knowfinance\""));
+                     }
+
+                 }
+
+                if (id == R.id.mnuLogout) {
+                  sessionManager.logoutUser();
                     b.dlMainActivity.closeDrawer(GravityCompat.START);
                     return true;
                 }

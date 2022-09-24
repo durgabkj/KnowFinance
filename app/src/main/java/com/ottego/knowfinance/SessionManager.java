@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.ottego.knowfinance.Model.SessionModel;
+
 public class SessionManager {
     public static final String KEY_ID = "id";
     public static final String KEY_FIRST_NAME = "name";
@@ -12,9 +14,12 @@ public class SessionManager {
     public static final String KEY_EMAIL = "email";
     public static final String KEY_GENDER = "gender";
     public static final String KEY_ROLE = "role";
-    public static final String KEY_STATUS = "status";
-    public static final String KEY_SECRET = "api_secret";
-    public static final String KEY_API = "api_key";
+    public static final String KEY_LOGIN_TOKEN = "token";
+    public static final String KEY_USERNAME = "token";
+
+    public static final String REGISTER_TOKEN = "token";
+
+
 
 
     private static final String PREF_NAME = "userData";
@@ -31,21 +36,18 @@ public class SessionManager {
     }
 
 
-//    public void createSession(SessionModel model) {
-//        editor.putBoolean(IS_LOGIN, true);
-//
-//        editor.putString(KEY_ID, model.id);
-//        editor.putString(KEY_FIRST_NAME, model.name);
-//        editor.putString(KEY_lAST_NAME, model.name);
-//        editor.putString(KEY_MOB, model.mob);
-//        editor.putString(KEY_EMAIL, model.email);
-//        editor.putString(KEY_GENDER, model.gender);
-//        editor.putString(KEY_ROLE, model.role);
-//        editor.putString(KEY_STATUS, model.status);
-//
-//        editor.commit();
-//        //  Utils.sendDeviceId ( _context );
-//    }
+    public void createSession(SessionModel model) {
+        editor.putBoolean(IS_LOGIN, true);
+        editor.putString(KEY_USERNAME, model.user.username);
+        editor.putString(KEY_LOGIN_TOKEN, model.token);
+        editor.putString(KEY_MOB, model.user.first_name);
+        editor.putString(KEY_EMAIL, model.user.email);
+        editor.putString(KEY_lAST_NAME, model.user.last_name);
+        editor.putString(KEY_MOB, model.user.mobile_no);
+
+        editor.commit();
+        //  Utils.sendDeviceId ( _context );
+    }
 
 
     public void clearSession() {
@@ -75,27 +77,47 @@ public class SessionManager {
         return pref.getString(KEY_lAST_NAME, null);
     }
 
-    public String getMob1() {
+    public String getMob() {
         return pref.getString(KEY_MOB, null);
     }
-
-
 
     public String getEmail() {
         return pref.getString(KEY_EMAIL, null);
     }
 
-    public String getGender() {
-        return pref.getString(KEY_GENDER, null);
+    public String getUserLoginToken() {
+        return pref.getString(KEY_LOGIN_TOKEN, "");
     }
 
-    public String getRole() {
-        return pref.getString(KEY_ROLE, null);
+    public String getUsername() {
+        return pref.getString(KEY_USERNAME, "");
     }
 
-    public String getStatus() {
-        return pref.getString(KEY_STATUS, null);
+    public void createSessionToken(String token) {
+        editor.putString(REGISTER_TOKEN, token);
+        editor.commit();
     }
 
-
+    public String getUserToken() {
+        return pref.getString(REGISTER_TOKEN, "");
+    }
+//
+//    public void createSession(SessionModel model) {
+//        editor.putBoolean(IS_LOGIN, true);
+//        editor.putString(LOGIN_TOKEN,model.token);
+//        editor.commit();
+//    }
+//
+//    public String getUserLoginToken() {
+//        return pref.getString(LOGIN_TOKEN, "");
+//    }
+//
+//    public void createSessionUsername(String username) {
+//        editor.putString(USERNAME, username);
+//        editor.commit();
+//    }
+//
+//    public String getUsername() {
+//        return pref.getString(USERNAME, "");
+//    }
 }

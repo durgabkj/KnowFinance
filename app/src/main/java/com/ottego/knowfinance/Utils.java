@@ -29,7 +29,8 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Utils {
-    public static String BASEURL = "http://103.150.186.108:8006/api/";
+//    public static String BASEURL = "http://103.150.186.108:8006/api/";
+    public static String BASEURL = "http://192.168.1.36:8000/api/";
     public static int SERVER_TIMEOUT = 30000;
 
     public final static boolean isValidEmail(CharSequence target) {
@@ -57,40 +58,7 @@ public class Utils {
         }
     }
 
-    public static void sendDeviceId(final Context context) {
-        final String url_device = Utils.BASEURL + "deviceidset.php";
-        final SessionManager sessionManager = new SessionManager(context);
-        SharedPreferences pref = context.getSharedPreferences("firebase_sh", 0);
-        final String firebaseId = pref.getString("firebaseid", null);
 
-        class SendDeviceId extends AsyncTask<String, Void, String> {
-            protected String doInBackground(String... urls) {
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, url_device, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("uid", sessionManager.getId());
-                        params.put("deviceid", firebaseId);
-                        return params;
-                    }
-                };
-                stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-                MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
-                return null;
-            }
-        }
-        new SendDeviceId().execute();
-    }
     public static String getTimeInMonth(String time) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss", Locale.US);
         SimpleDateFormat myFormat = new SimpleDateFormat("MMM dd yyyy, hh:mm a", Locale.US);

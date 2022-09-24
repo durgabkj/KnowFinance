@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -149,6 +151,33 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void listener() {
+
+        b.btnLoginSetEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b.btnLoginSet.setVisibility(View.VISIBLE);
+                b.etApiKey.requestFocus();
+                b.btnLoginSetEdit.setVisibility(View.GONE);
+                b.etApiKey.setEnabled(true);
+                b.etSecretKey.setEnabled(true);
+                b.etSecretKey.setEnabled(true);
+                b.etAddUserPassword.setEnabled(true);
+                b.etAddUserOTPKey.setEnabled(true);
+
+                if(b.etApiKey.requestFocus()) {
+                    b.etApiKey.postDelayed(new Runnable(){
+                                               @Override public void run(){
+                                                   InputMethodManager keyboard=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                   keyboard.showSoftInput(b.etApiKey,0);
+                                               }
+                                           }
+                            ,200);
+                }
+            }
+        });
+
+
+
         b.mtbSettingFinance.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -328,6 +357,13 @@ public class SettingActivity extends AppCompatActivity {
                     String code = jsonObject.getString("results");
                     if (code.equals("1")) {
                         Toast.makeText(context, "Credentials Saved Successfully", Toast.LENGTH_SHORT).show();
+                        b.btnLoginSetEdit.setVisibility(View.VISIBLE);
+                        b.btnLoginSet.setVisibility(View.GONE);
+                        b.etApiKey.setEnabled(false);
+                        b.etSecretKey.setEnabled(false);
+                        b.etSecretKey.setEnabled(false);
+                        b.etAddUserPassword.setEnabled(false);
+                        b.etAddUserOTPKey.setEnabled(false);
                     } else {
                         Toast.makeText(context,  "Credentials not saved Try Again", Toast.LENGTH_SHORT).show();
                     }
