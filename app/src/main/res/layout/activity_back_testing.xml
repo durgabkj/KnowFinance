@@ -122,16 +122,15 @@
                 tools:ignore="UselessParent">
 
                 <Spinner
-                    android:id="@+id/spType"
+                    android:id="@+id/spStock"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:focusableInTouchMode="false"
+                    android:focusableInTouchMode="true"
                     android:fontFamily="@font/mo_re"
                     android:importantForAutofill="no"
-                    android:maxLines="1"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -165,14 +164,14 @@
                     tools:ignore="UselessParent">
 
                     <TextView
-                        android:id="@+id/etFromAgePartnerPreference"
+                        android:id="@+id/etFromAge"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:editable="false"
                         android:fontFamily="@font/mo_re"
                         android:enabled="true"
-                        android:hint="mm/dd/yyyy"
+                        android:hint="YYYY/DD/MM"
                         android:gravity="center_vertical"
                         android:textSize="12dp"
                         android:layout_marginStart="8dp"
@@ -184,20 +183,24 @@
 
 
                 <TextView
+                    android:id="@+id/tvto"
                     android:layout_width="wrap_content"
                     android:text="To"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:padding="2dp"
+                    android:visibility="gone"
                     android:textAlignment="center"
                     android:gravity="center"
                     android:layout_height="wrap_content"/>
 
                 <!-- Drop down number 2-->
                 <LinearLayout
+                    android:id="@+id/lldateto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
                     android:background="@drawable/blue_border"
@@ -205,13 +208,13 @@
 
 
                     <TextView
-                        android:id="@+id/etToAgePartnerPreference"
+                        android:id="@+id/etToAge"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:editable="false"
                         android:fontFamily="@font/mo_re"
-                        android:hint="mm/dd/yyyy"
+                        android:hint="YYYY/DD/MM"
                         android:gravity="center_vertical"
                         android:textSize="12dp"
                         android:layout_marginStart="8dp"
@@ -247,7 +250,7 @@
                     android:layout_height="40dp"
                     android:fontFamily="@font/mo_re"
                     android:hint="Quantity"
-                    android:textSize="12sp"
+                    android:textSize="13sp"
                     android:padding="6dp"
                     android:background="@drawable/blue_border"
                     android:textAlignment="textStart"
@@ -257,6 +260,7 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtnBackTestSearchData"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Search Data"
@@ -267,140 +271,131 @@
                 android:fontFamily="@font/mo_re"
                 android:textStyle="bold"/>
         </LinearLayout>
+<LinearLayout
+    android:id="@+id/llRecord"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
-        <!--Option Bar-->
-        <LinearLayout
-            android:layout_width="match_parent"
+    <!--Option Bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/circularbordersolid"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/personalinfobtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/circularbordersolid"
+            android:layout_weight="2"
+            android:fontFamily="@font/mo_re"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/personalinfobtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/mo_re"
-                android:gravity="center"
-                android:padding="13dp"
-                android:text="OverView"
-                android:textAllCaps="true"
-                android:textColor="@color/appColor"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/light_gray" />
-
-            <TextView
-                android:id="@+id/experiencebtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/mo_re"
-                android:gravity="center"
-                android:padding="13dp"
-                android:text="Performence Summary"
-                android:textAllCaps="true"
-                android:textColor="@color/lightgrey"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/lightgrey" />
-
-            <TextView
-                android:id="@+id/reviewbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/mo_re"
-                android:gravity="center"
-                android:padding="13dp"
-                android:text="List of Trade"
-                android:textAllCaps="true"
-                android:textColor="@color/lightgrey"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvOverView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:padding="13dp"
+            android:text="OverView"
+            android:textAllCaps="true"
+            android:textColor="@color/appColor"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/rvPerformance"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/experiencebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/mo_re"
+            android:gravity="center"
+            android:padding="13dp"
+            android:text="Performence Summary"
+            android:textAllCaps="true"
+            android:textColor="@color/lightgrey"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/lightgrey" />
+
+        <TextView
+            android:id="@+id/reviewbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/mo_re"
+            android:gravity="center"
+            android:padding="13dp"
+            android:text="List of Trade"
+            android:textAllCaps="true"
+            android:textColor="@color/lightgrey"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/mo_re"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textSize="17dp"
+
+        android:textStyle="bold"
+        android:text="All Records" />
+    <LinearLayout
+        android:id="@+id/rvPerformance"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@color/white"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1.3"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:fontFamily="@font/mo_re"
-                android:padding="5dp"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:textSize="17dp"
 
-                android:textStyle="bold"
-                android:text="All Records" />
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:background="@color/white"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
-
-                <androidx.cardview.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="8dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Net Profit" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Net Profit" />
 
 
                     <TextView
@@ -417,30 +412,30 @@
                         android:text="315.5, 0.5%" />
 
 
-                    </LinearLayout>
+                </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            </LinearLayout>
-            <LinearLayout
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -450,55 +445,55 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Gross" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Gross" />
 
 
-                <TextView
-                    android:id="@+id/tvGrossProfit"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvGrossProfit"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
 
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+        </LinearLayout>
 
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -508,55 +503,52 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Gross Loss" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Gross Loss" />
 
 
-                <TextView
-                    android:id="@+id/tvGrossLoss"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvGrossLoss"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
 
-
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -566,57 +558,57 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Max DrawDown" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Max DrawDown" />
 
 
-                <TextView
-                    android:id="@+id/tvMaxDrawDown"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvMaxDrawDown"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
 
 
 
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
 
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -626,53 +618,53 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Commission Paid" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Commission Paid" />
 
 
-                <TextView
-                    android:id="@+id/tvCommissionPaid"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvCommissionPaid"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
 
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -692,41 +684,41 @@
                         android:singleLine="true"
                         android:text="Total Close Trade" />
 
-                <TextView
-                    android:id="@+id/tvCloseTrade"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvCloseTrade"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
                 </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -735,52 +727,52 @@
                     android:layout_marginBottom="8dp"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Total Open Trade" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Total Open Trade" />
 
 
-                <TextView
-                    android:id="@+id/tvTotalOpen"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvTotalOpen"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -789,163 +781,53 @@
                     android:layout_marginBottom="8dp"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Number Winning Trade" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Number Winning Trade" />
 
 
-                <TextView
-                    android:id="@+id/tvWinningTradeProfit"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvWinningTradeProfit"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Number Loosing Trade" />
-
-
-                <TextView
-                    android:id="@+id/tvLoosingTrade"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
-                </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Profit Percentage" />
-
-
-                <TextView
-                    android:id="@+id/tvProfitPercentageOpen"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
-                </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="20dp"
-                    android:translationZ="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="20dp"
-                    app:cardMaxElevation="20dp">
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -955,49 +837,869 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.3"
-                    android:layout_marginStart="20dp"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/mo_re"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="Avg Net Pnl" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Number Loosing Trade" />
 
 
-                <TextView
-                    android:id="@+id/tvAvgNetPnl"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="serif"
-                    android:padding="5dp"
-                    android:singleLine="true"
-                    android:text="315.5, 0.5%" />
+                    <TextView
+                        android:id="@+id/tvLoosingTrade"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
                 </LinearLayout>
-                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Profit Percentage" />
+
+
+                    <TextView
+                        android:id="@+id/tvProfitPercentageOpen"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="20dp"
+                android:translationZ="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="20dp"
+                app:cardMaxElevation="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/mo_re"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Avg Net Pnl" />
+
+
+                    <TextView
+                        android:id="@+id/tvAvgNetPnl"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="315.5, 0.5%" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llNoData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/nodata" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No data found"
+            android:fontFamily="@font/mo_re"/>
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/rvOverView"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        android:layout_height="140dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Net Profit / Loss :     "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+
+                    <TextView
+                        android:id="@+id/tvProfitLossValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:padding="3dp"
+                        android:singleLine="false"
+                        android:textColor="@color/black" />
+                    <TextView
+                        android:id="@+id/tvProfitLossPer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center_vertical"
+                        android:padding="3dp"
+                        android:singleLine="false"
+                        android:textColor="@color/black" />
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Total close trades :  "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+
+                    <TextView
+                        android:id="@+id/tvTCloseTrade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Max Loss DrawDown :"
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:id="@+id/tvTradeMaxLossDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvMaxLossPercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:layout_marginStart="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Profit :"
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:id="@+id/tvTradeProfit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
             </LinearLayout>
 
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <LinearLayout android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S.No."
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/appColor"
+                    android:alpha="0.9"/>
+
+                <TextView
+                    android:id="@+id/tvBackTestSno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@android:color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Trade :   "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:id="@+id/tvSTOCK_NAME"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center_vertical"
+                        android:padding="3dp"
+                        android:singleLine="false"
+                        android:text="HDFC LIFE INSURENCE COMPANY LIMITED"
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Signal :  "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+
+                    <TextView
+                        android:id="@+id/tvBackTestBuy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Heikin Ashi"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Date :"
+                            android:textAlignment="center"
+                            android:textColor="@color/appColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:text="Future"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:singleLine="true"
+                        android:text="Signal :  "
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="Heikin Ashi"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Date :"
+                            android:textAlignment="center"
+                            android:textColor="@color/appColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:text="Future"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Price :"
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black" />
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Quantity :"
+                            android:textAlignment="center"
+                            android:textColor="@color/appColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Points :"
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black" />
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Profit / Loss :"
+                            android:textAlignment="center"
+                            android:textColor="@color/appColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="serif"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Net Profit / Loss :"
+                        android:textAlignment="center"
+                        android:textColor="@color/appColor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTrade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
 
+        <TableLayout
+            android:id="@+id/tbl_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/cell_shape_header"
+            android:divider="?android:dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="S.No" />
+
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/tbl_header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/cell_shape_header"
+            android:divider="?android:dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Trade" />
+
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/tbl_header2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:background="@drawable/cell_shape_header"
+            android:divider="?android:dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Buy / Sell" />
+
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/tbl_header3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:background="@drawable/cell_shape_header"
+            android:divider="?android:dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Date" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/tbl_header">
+
+            <TableLayout
+                android:id="@+id/tbl_relesed_wake_locks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/cell_shape_header"
+                android:divider="?android:dividerHorizontal"
+                android:orientation="horizontal"
+                android:showDividers="middle"
+                android:stretchColumns="1,2">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="0.5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Fragment 01" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Fragment 01" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Fragment 01" />
+
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListOfTrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>
 
 
 
 
 
     </LinearLayout>
+
+
 </ScrollView>
 
 

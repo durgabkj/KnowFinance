@@ -209,14 +209,14 @@ RegistrationModel model;
                             Gson gson = new Gson();
                             model= gson.fromJson(String.valueOf(response), RegistrationModel.class);
 
-                            Toast.makeText(context, "Registration Successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(context, LoginActivity.class);
                             intent.putExtra("token",model.token);
                             startActivity(intent);
-                            sessionManager.createSessionToken(model.token);
+                            //sessionManager.createSessionToken(model.token);
 
                         } else {
-                            Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

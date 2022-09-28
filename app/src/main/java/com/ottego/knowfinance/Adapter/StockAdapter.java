@@ -58,7 +58,6 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
     @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-
         StockDetailsModel  model = list.get(i);
         holder.tvSno.setText(String.valueOf(i + 1));
         holder.tvModule.setText(model.module);

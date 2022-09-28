@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TableLayout
+        android:id="@+id/tbl_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="8dp"
+        android:background="@drawable/cell_shape_header"
+        android:divider="?android:dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0.5dp">
+
+            <TextView
+                android:id="@+id/tvBackTestSno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Serial no." />
+
+        </TableRow>
+
+
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tbl_header1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="8dp"
+        android:background="@drawable/cell_shape_header"
+        android:divider="?android:dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0.5dp">
+
+            <TextView
+                android:id="@+id/tvSTOCK_NAME"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Trade" />
+
+        </TableRow>
+
+
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tbl_header2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="8dp"
+        android:background="@drawable/cell_shape_header"
+        android:divider="?android:dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0.5dp">
+
+            <TextView
+                android:id="@+id/tvTradeDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Date" />
+
+        </TableRow>
+
+
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tbl_header3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/cell_shape_header"
+        android:divider="?android:dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0.5dp">
+
+            <TextView
+                android:id="@+id/tvBackTestBuySell"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Buy / Sell" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/tbl_header">
+
+        <TableLayout
+            android:id="@+id/tbl_relesed_wake_locks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/cell_shape_header"
+            android:divider="?android:dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:stretchColumns="1,2">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:id="@+id/tvBackTestPrice"
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_height="match_parent"
+                    android:text="Price" />
+
+                <TextView
+                    android:id="@+id/tvBackTestQuantity"
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_height="match_parent"
+                    android:text="Quantity" />
+
+                <TextView
+                    android:id="@+id/tvBackTestPoints"
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_height="match_parent"
+                    android:text="Points" />
+
+                <TextView
+                    android:id="@+id/tvBackTestProfitLoss"
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_height="match_parent"
+                    android:text="Profit loss" />
+
+                <TextView
+                    android:id="@+id/tvBackTestNetProfitLoss"
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_height="match_parent"
+                    android:text=" Net Profit loss" />
+
+
+            </TableRow>
+        </TableLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
+
+
+

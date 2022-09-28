@@ -34,7 +34,7 @@ public class SplashScreen extends Activity {
                 }
 
                 finish();
-
+               // startActivity(new Intent(context, FingerAuthenticationActivity.class));
             }
 
         }, 2000);

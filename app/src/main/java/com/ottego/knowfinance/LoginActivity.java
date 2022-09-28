@@ -161,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("username", username);
                 params.put("password", password);
-                params.put("token", sessionManager.getUserToken());
+                params.put("token", "");
                 Log.e("params", String.valueOf(params));
                 return params;
             }

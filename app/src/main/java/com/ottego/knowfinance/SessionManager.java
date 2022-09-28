@@ -8,14 +8,14 @@ import com.ottego.knowfinance.Model.SessionModel;
 
 public class SessionManager {
     public static final String KEY_ID = "id";
-    public static final String KEY_FIRST_NAME = "name";
-    public static final String KEY_lAST_NAME = "name";
+    public static final String KEY_FIRST_NAME = "first_name";
+    public static final String KEY_lAST_NAME = "last_name";
     public static final String KEY_MOB = "mob";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_GENDER = "gender";
     public static final String KEY_ROLE = "role";
     public static final String KEY_LOGIN_TOKEN = "token";
-    public static final String KEY_USERNAME = "token";
+    public static final String KEY_USERNAME = "usename";
 
     public static final String REGISTER_TOKEN = "token";
 
@@ -26,6 +26,7 @@ public class SessionManager {
     private static final String IS_LOGIN = "isLogin";
     private static SharedPreferences pref;
     SharedPreferences.Editor editor;
+    SharedPreferences.Editor editor1;
     Context _context;
     int PRIVATE_MODE = 0;
 
@@ -38,12 +39,12 @@ public class SessionManager {
 
     public void createSession(SessionModel model) {
         editor.putBoolean(IS_LOGIN, true);
-        editor.putString(KEY_USERNAME, model.user.username);
+        editor.putString(KEY_USERNAME, model.username);
         editor.putString(KEY_LOGIN_TOKEN, model.token);
-        editor.putString(KEY_MOB, model.user.first_name);
-        editor.putString(KEY_EMAIL, model.user.email);
-        editor.putString(KEY_lAST_NAME, model.user.last_name);
-        editor.putString(KEY_MOB, model.user.mobile_no);
+        editor.putString(KEY_FIRST_NAME, model.first_name);
+        editor.putString(KEY_EMAIL, model.email);
+        editor.putString(KEY_lAST_NAME, model.last_name);
+        editor.putString(KEY_MOB, model.mobile_no);
 
         editor.commit();
         //  Utils.sendDeviceId ( _context );
@@ -93,10 +94,10 @@ public class SessionManager {
         return pref.getString(KEY_USERNAME, "");
     }
 
-    public void createSessionToken(String token) {
-        editor.putString(REGISTER_TOKEN, token);
-        editor.commit();
-    }
+//    public void createSessionToken(String token) {
+//        editor1.putString(REGISTER_TOKEN, token);
+//        editor1.commit();
+//    }
 
     public String getUserToken() {
         return pref.getString(REGISTER_TOKEN, "");

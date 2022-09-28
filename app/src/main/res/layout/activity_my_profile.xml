@@ -23,6 +23,7 @@
         android:padding="16dp">
 
         <ImageView
+            android:id="@+id/ivBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="10dp"
@@ -73,15 +74,15 @@
                 android:padding="16dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="90dp"
-                    app:cardCornerRadius="6dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="100dp"
                     app:cardElevation="0dp">
 
                     <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="90dp"
-                        android:scaleType="fitXY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/pp" />
 
                 </androidx.cardview.widget.CardView>
@@ -92,6 +93,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvUserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -105,7 +107,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mo_re"
-                        android:text="Android Developer"
+                        android:text="Trader"
+                        android:layout_gravity="center"
                         android:textSize="14sp" />
 
 
@@ -116,6 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:visibility="gone"
                     android:paddingBottom="10dp">
 
                     <LinearLayout
@@ -223,8 +227,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/mo_re"
-                                android:text="About me"
+                                android:text="Login &amp; Security"
                                 android:textSize="17sp"
+                                android:textColor="@color/appColor"
                                 android:textStyle="bold" />
 
                             <Space
@@ -246,7 +251,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Description" />
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:text="Password:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="*********" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -268,8 +281,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/mo_re"
-                            android:text="contact"
+                            android:text="Personal Details"
                             android:textSize="17sp"
+                            android:textColor="@color/appColor"
                             android:textStyle="bold" />
 
                         <Space
@@ -303,14 +317,14 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/blue_border"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_outline_date_range_24" />
+                                android:src="@drawable/ic_baseline_phone_android_24" />
 
                             <TextView
+                                android:id="@+id/ProfilePhone"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/mo_re"
-                                android:text="+91 7999193854"
                                 android:textColor="@color/textcardColor"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -327,14 +341,14 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/blue_border"
                                 android:padding="10dp"
-                                android:src="@drawable/bg_edit_text" />
+                                android:src="@drawable/ic_email_black_24dp" />
 
                             <TextView
+                                android:id="@+id/ProfileEmail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/mo_re"
-                                android:text="sanskar@theindianappguy.com"
                                 android:textColor="@color/textcardColor"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -351,14 +365,14 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/blue_border"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_baseline_settings_24" />
+                                android:src="@drawable/ic_baseline_person_add_alt_1_24" />
 
                             <TextView
+                                android:id="@+id/ProfileUsername"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/mo_re"
-                                android:text="Leeds, United Kingdom"
                                 android:textColor="@color/textcardColor"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -371,6 +385,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:visibility="gone"
                     android:background="@drawable/circularbordersolid"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -480,6 +495,7 @@
                 android:id="@+id/experience"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="vertical">
 
 

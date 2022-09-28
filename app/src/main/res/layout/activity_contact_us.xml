@@ -186,6 +186,17 @@
                         android:orientation="vertical">
 
 
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/appColor"
+                            android:text="Add Comments"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/mo_re"/>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -193,20 +204,24 @@
 
 
                             <EditText
+                                android:id="@+id/tvContactName"
                                 style="@style/PersonalDataTextView"
                                 android:layout_width="0dp"
                                 android:layout_height="40dp"
                                 android:layout_weight="1"
+                                android:singleLine="true"
+                                android:inputType="textCapWords"
                                 android:fontFamily="@font/mo_re"
                                 android:hint="Name" />
 
                             <EditText
-                                android:id="@+id/tvUserSubCommunity"
+                                android:id="@+id/tvContactEmail"
                                 style="@style/PersonalDataTextView"
                                 android:layout_width="0dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_weight="1"
+                                android:singleLine="true"
                                 android:fontFamily="@font/mo_re"
                                 android:hint="Your Email" />
 
@@ -215,9 +230,12 @@
 
 
                         <EditText
+                            android:id="@+id/tvContactSubject"
                             style="@style/PersonalDataTextView"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
+                            android:singleLine="true"
+                            android:inputType="textCapSentences"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/mo_re"
                             android:hint="Subject" />
@@ -230,8 +248,9 @@
                             android:layout_height="200dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginTop="8dp"
+                            android:inputType="textCapSentences"
                             android:layout_marginBottom="8dp"
-                            android:contentDescription="Enter Input Here"
+                            android:contentDescription="Enter your Comment"
                             android:gravity="left"
                             android:hint="Enter New Note"
                             android:imeOptions="actionDone"
@@ -244,6 +263,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSendComments"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Save"

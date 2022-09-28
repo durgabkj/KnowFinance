@@ -38,6 +38,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/bg_window.xml" value="0.152" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/blue_border.xml" value="0.156" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/blue_outline.xml" value="0.156" />
+        <entry key="..\:/KnowFinance/app/src/main/res/drawable/cell_shape_header.xml" value="0.1755" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_blue_fil.xml" value="0.152" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_dark_blue_fil.xml" value="0.152" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/circle_dark_grey_fil.xml" value="0.152" />
@@ -79,7 +80,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/toggle_widget_background.xml" value="0.136" />
         <entry key="..\:/KnowFinance/app/src/main/res/drawable/white_bg.xml" value="0.1595" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_about_us.xml" value="0.2" />
-        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.38386308068459657" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_add_stock_info.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_back_testing.xml" value="0.2523467697404749" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_chart.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/activity_contact_us.xml" value="0.264" />
@@ -113,6 +114,7 @@
         <entry key="..\:/KnowFinance/app/src/main/res/layout/internetconnection.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_add_stock.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_back_test_margin.xml" value="0.23802083333333332" />
+        <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_backtest.xml" value="0.264" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_confirmation_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_custom_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/KnowFinance/app/src/main/res/layout/layout_image_slider.xml" value="0.23697916666666666" />

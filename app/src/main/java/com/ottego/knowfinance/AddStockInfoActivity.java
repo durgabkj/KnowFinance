@@ -117,9 +117,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
     }
 
     private void listener() {
-
-
-
         //cancel
         binding.mbCancelStack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,7 +128,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
         });
 
 
-
         //add stock
         binding.addStockButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +137,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
                 binding.rvStockDetailsTable.setVisibility(View.GONE);
             }
         });
-
 
 
         // Back on click back button
@@ -182,6 +177,7 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
             }
 
         });
+
 
 // click listener on Type spinner
         binding.spType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -227,7 +223,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String createdBy = binding.spStock.getSelectedItem().toString();
                 original_value = (modelStockList.data.get(position).lot_size);
                 stock_name = (modelStockList.data.get(position).id);
 
@@ -295,8 +290,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
 
 //        global val=firstTimeVisit
-
-
         binding.tvQuantity.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -332,8 +325,6 @@ public class AddStockInfoActivity extends AppCompatActivity implements ApiListen
 
             }
         });
-
-
         binding.mbSaveStack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
